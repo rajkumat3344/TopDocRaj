@@ -1,5 +1,5 @@
 [
-    {
+  {
     "address": "MasterCanteen,unit-3,Odisha,756401",
     "ailmentsTreated": [
       "Cancer",
@@ -35,7 +35,7 @@
       {
         "comapanyName": "National Institute of Mental Health and Neurosciences (NIMHANS)",
         "description": " Optimized the whole medical infrastructure",
-        "endDate": "present",
+        "endDate": null,
         "location": "Bangalore",
         "startDate": "2000",
         "title": "HOD and Professor of Neurosurgery Dept"
@@ -53,322 +53,325 @@
     "gender": "male",
     "hospital": {
       "identifier": "54321",
-      "name": "Srirama Chandra Bhanja Medical College and Hospital",
+      "name": "Srirama Chandra Bhanja Medical College and Hospital"
     },
-      "isPersonAllowed": "true",
-      "isVideoAllowed": "true",
-      "landmark": "Near JK Dance school",
-      "languages": "English, Hindi, Oriya",
-      "lastName": "Bhargav",
-      "licenses": {
-        "identifier": "12345",
-        "name": "MBBS License",
-        "registrationYear": "15022022",
-        "validUpTo": "15022024",
-        "provider": "Delhi Medical Council"
-      },
-      "locality": "Old town, Bhubaneswar",
-      "location": "41.12,-71.34",
-      "name": "Harsh Bhargav",
-      "phone": 6370020831,
-      "schedule": {
-        "day": "Monday",
-        "slotTimeInMinutes": "15",
-        "workingTime": [
-          {
-            "endTime": "0805325",
-            "startTime": "1005325"
-          },
-          {
-            "endTime": "1705325",
-            "startTime": "1905325"
-          },
-          {
-            "endTime": "1505325",
-            "startTime": "1705325"
-          }
-        ],
-        "specialization": "Neurosurgeon",
-        "state": "Odisha",
-        "yearsOfExperience": "24"
-      }},
-      {
-        "address": "Veerana Palya, Outer Ring Road, Landmark : Near Manyata Tech Park, Bangalore",
-        "ailmentsTreated": [
-          "Cancer",
-          "Skin Disease",
-          "Chemo"
-        ],
-        "averageRating": "4.65",
-        "city": "Bengaluru",
-        "country": "India",
-        "designation": "Neurosurgeon",
-        "education": [
-          {
-            "degree": "MCh",
-            "description": "MCH is short for mean corpuscular hemoglobin",
-            "endDate": "1997",
-            "fieldOfStudy": "Neuro Surgery",
-            "grade": "A",
-            "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-            "startDate": "1995"
-          },
-          {
-            "degree": "MBBS",
-            "description": "Bachelor of Medicine Bachelor of Surgery",
-            "endDate": "1994",
-            "fieldOfStudy": "Neuro Surgery",
-            "grade": "A",
-            "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-            "startDate": "1989"
-          }
-        ],
-        "email": "ayushkataria@gmail.com",
-        "experience": [
-          {
-            "comapanyName": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-            "description": " Optimized the whole medical infrastructure",
-            "endDate": "present",
-            "location": "Bangalore",
-            "startDate": "2000",
-            "title": "HOD and Professor of Neurosurgery Dept"
-          },
-          {
-            "comapanyName": "Srirama Chandra Bhanja Medical College and Hospital",
-            "description": "Handled thousand sof patients",
-            "endDate": "2000",
-            "location": "Cuttack",
-            "startDate": "1996",
-            "title": "HOD and Professor of Neurosurgery Dept"
-          }
-        ],
-        "firstName": "Harsh",
-        "gender": "male",
-        "hospital": {
-          "identifier": "64321",
-          "name": "Srirama Chandra Bhanja Medical College and Hospital",
+    "isPersonAllowed": "true",
+    "isVideoAllowed": "true",
+    "landmark": "Near JK Dance school",
+    "languages": "English, Hindi, Oriya",
+    "lastName": "Bhargav",
+    "licenses": {
+      "identifier": "12345",
+      "name": "MBBS License",
+      "registrationYear": "15022022",
+      "validUpTo": "15022024",
+      "provider": "Delhi Medical Council"
+    },
+    "locality": "Old town, Bhubaneswar",
+    "location": "41.12,-71.34",
+    "name": "Harsh Bhargav",
+    "phone": 6370020831,
+    "schedule": {
+      "day": "Monday",
+      "slotTimeInMinutes": "15",
+      "workingTime": [
+        {
+          "endTime": "080000+0000",
+          "startTime": "100000+0000"
         },
-          "isPersonAllowed": "true",
-          "isVideoAllowed": "true",
-          "landmark": "Near JK Dance school",
-          "languages": "English, Hindi, Oriya",
-          "lastName": "Kataria",
-          "licenses": {
-            "identifier": "82345",
-            "name": "MBBS License",
-            "registrationYear": "15022022",
-            "validUpTo": "15022024",
-            "provider": "Delhi Medical Council"
-          },
-          "locality": "Old town, Bengaluru",
-          "location": "41.12,-71.34",
-          "name": "Ayush kataria",
-          "phone": 6370020831,
-          "schedule": {
-            "day": "Monday",
-            "slotTimeInMinutes": "15",
-            "workingTime": [
-              {
-                "endTime": "0805325",
-                "startTime": "1005325"
-              },
-              {
-                "endTime": "1705325",
-                "startTime": "1905325"
-              },
-              {
-                "endTime": "1505325",
-                "startTime": "1705325"
-              }
-            ],
-            "specialization": "Neurosurgeon",
-            "state": "Karnataka",
-            "yearsOfExperience": "24"
-          }},
-          {
-            "address": "MasterCanteen,unit-3,Odisha,756401",
-            "ailmentsTreated": [
-             "Tooth cleaning", "tooth repairing"
-            ],
-            "averageRating": "4.65",
-            "city": "Bhubaneswar",
-            "country": "India",
-            "designation": "Neurosurgeon",
-            "education": [
-              {
-                "degree": "MCh",
-                "description": "MCH is short for mean corpuscular hemoglobin",
-                "endDate": "1997",
-                "fieldOfStudy": "Neuro Surgery",
-                "grade": "A",
-                "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-                "startDate": "1995"
-              },
-              {
-                "degree": "MBBS",
-                "description": "Bachelor of Medicine Bachelor of Surgery",
-                "endDate": "1994",
-                "fieldOfStudy": "Neuro Surgery",
-                "grade": "A",
-                "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-                "startDate": "1989"
-              }
-            ],
-            "email": "nitishkumar@gmail.com",
-            "experience": [
-              {
-                "comapanyName": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-                "description": " Optimized the whole medical infrastructure",
-                "endDate": "present",
-                "location": "Bangalore",
-                "startDate": "2000",
-                "title": "HOD and Professor of Neurosurgery Dept"
-              },
-              {
-                "comapanyName": "Srirama Chandra Bhanja Medical College and Hospital",
-                "description": "Handled thousand sof patients",
-                "endDate": "2000",
-                "location": "Cuttack",
-                "startDate": "1996",
-                "title": "HOD and Professor of Neurosurgery Dept"
-              }
-            ],
-            "firstName": "Nitish",
-            "gender": "male",
-            "hospital": {
-              "identifier": "74321",
-              "name": "Srirama Chandra Bhanja Medical College and Hospital",
-            },
-              "isPersonAllowed": "true",
-              "isVideoAllowed": "true",
-              "landmark": "Near JK Dance school",
-              "languages": "English, Hindi, Oriya",
-              "lastName": "Kataria",
-              "licenses": {
-                "identifier": "42345",
-                "name": "MBBS License",
-                "registrationYear": "15022022",
-                "validUpTo": "15022024",
-                "provider": "Delhi Medical Council"
-              },
-              "locality": "Old town, Bhubaneswar",
-              "location": "41.12,-71.34",
-              "name": "Nitish kumar",
-              "phone": 6370020831,
-              "schedule": {
-                "day": "Monday",
-                "slotTimeInMinutes": "15",
-                "workingTime": [
-                  {
-                    "endTime": "0805325",
-                    "startTime": "1005325"
-                  },
-                  {
-                    "endTime": "1705325",
-                    "startTime": "1905325"
-                  },
-                  {
-                    "endTime": "1505325",
-                    "startTime": "1705325"
-                  }
-                ],
-                "specialization": "Dentist",
-                "state": "Odisha",
-                "yearsOfExperience": "24"
-              }},
-              {
-                "address": "Veerana Palya, Outer Ring Road, Landmark : Near Manyata Tech Park, Bangalore",
-                "ailmentsTreated": [
-                  "Cancer",
-                  "Skin Disease",
-                  "Chemo"
-                ],
-                "averageRating": "4.65",
-                "city": "Bengaluru",
-                "country": "India",
-                "designation": "Neurosurgeon",
-                "education": [
-                  {
-                    "degree": "MCh",
-                    "description": "MCH is short for mean corpuscular hemoglobin",
-                    "endDate": "1997",
-                    "fieldOfStudy": "Neuro Surgery",
-                    "grade": "A",
-                    "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-                    "startDate": "1995"
-                  },
-                  {
-                    "degree": "MBBS",
-                    "description": "Bachelor of Medicine Bachelor of Surgery",
-                    "endDate": "1994",
-                    "fieldOfStudy": "Neuro Surgery",
-                    "grade": "A",
-                    "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-                    "startDate": "1989"
-                  }
-                ],
-                "email": "AkashGaikwad@gmail.com",
-                "experience": [
-                  {
-                    "comapanyName": "National Institute of Mental Health and Neurosciences (NIMHANS)",
-                    "description": " Optimized the whole medical infrastructure",
-                    "endDate": "present",
-                    "location": "Bangalore",
-                    "startDate": "2000",
-                    "title": "HOD and Professor of Neurosurgery Dept"
-                  },
-                  {
-                    "comapanyName": "Srirama Chandra Bhanja Medical College and Hospital",
-                    "description": "Handled thousand sof patients",
-                    "endDate": "2000",
-                    "location": "Cuttack",
-                    "startDate": "1996",
-                    "title": "HOD and Professor of Neurosurgery Dept"
-                  }
-                ],
-                "firstName": "Harsh",
-                "gender": "male",
-                "hospital": {
-                  "identifier": "84321",
-                  "name": "Srirama Chandra Bhanja Medical College and Hospital",
-                },
-                  "isPersonAllowed": "true",
-                  "isVideoAllowed": "true",
-                  "landmark": "Near JK Dance school",
-                  "languages": "English, Hindi, Marathi",
-                  "lastName": "Gaikwad",
-                  "licenses": {
-                    "identifier": "22345",
-                    "name": "MBBS License",
-                    "registrationYear": "15022022",
-                    "validUpTo": "15022024",
-                    "provider": "Delhi Medical Council"
-                  },
-                  "locality": "Old town, Bengaluru",
-                  "location": "41.12,-71.34",
-                  "name": "Akash gaikwad",
-                  "phone": 6370020831,
-                  "schedule": {
-                    "day": "Monday",
-                    "slotTimeInMinutes": "15",
-                    "workingTime": [
-                      {
-                        "endTime": "0805325",
-                        "startTime": "1005325"
-                      },
-                      {
-                        "endTime": "1705325",
-                        "startTime": "1905325"
-                      },
-                      {
-                        "endTime": "1505325",
-                        "startTime": "1705325"
-                      }
-                    ],
-                    "specialization": "Neurosurgeon",
-                    "state": "Karnataka",
-                    "yearsOfExperience": "24"
-                  }}
-    
-    
-    ]
+        {
+          "endTime": "170000+0000",
+          "startTime": "190000+0000"
+        },
+        {
+          "endTime": "150000+0000",
+          "startTime": "170000+0000"
+        }
+      ],
+      "specialization": "Neurosurgeon",
+      "state": "Odisha",
+      "yearsOfExperience": "24"
+    }
+  },
+  {
+    "address": "Veerana Palya, Outer Ring Road, Landmark : Near Manyata Tech Park, Bangalore",
+    "ailmentsTreated": [
+      "Cancer",
+      "Skin Disease",
+      "Chemo"
+    ],
+    "averageRating": "4.65",
+    "city": "Bengaluru",
+    "country": "India",
+    "designation": "Neurosurgeon",
+    "education": [
+      {
+        "degree": "MCh",
+        "description": "MCH is short for mean corpuscular hemoglobin",
+        "endDate": "1997",
+        "fieldOfStudy": "Neuro Surgery",
+        "grade": "A",
+        "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "startDate": "1995"
+      },
+      {
+        "degree": "MBBS",
+        "description": "Bachelor of Medicine Bachelor of Surgery",
+        "endDate": "1994",
+        "fieldOfStudy": "Neuro Surgery",
+        "grade": "A",
+        "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "startDate": "1989"
+      }
+    ],
+    "email": "ayushkataria@gmail.com",
+    "experience": [
+      {
+        "comapanyName": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "description": " Optimized the whole medical infrastructure",
+        "endDate": null,
+        "location": "Bangalore",
+        "startDate": "2000",
+        "title": "HOD and Professor of Neurosurgery Dept"
+      },
+      {
+        "comapanyName": "Srirama Chandra Bhanja Medical College and Hospital",
+        "description": "Handled thousand sof patients",
+        "endDate": "2000",
+        "location": "Cuttack",
+        "startDate": "1996",
+        "title": "HOD and Professor of Neurosurgery Dept"
+      }
+    ],
+    "firstName": "Harsh",
+    "gender": "male",
+    "hospital": {
+      "identifier": "64321",
+      "name": "Srirama Chandra Bhanja Medical College and Hospital"
+    },
+    "isPersonAllowed": "true",
+    "isVideoAllowed": "true",
+    "landmark": "Near JK Dance school",
+    "languages": "English, Hindi, Oriya",
+    "lastName": "Kataria",
+    "licenses": {
+      "identifier": "82345",
+      "name": "MBBS License",
+      "registrationYear": "15022022",
+      "validUpTo": "15022024",
+      "provider": "Delhi Medical Council"
+    },
+    "locality": "Old town, Bengaluru",
+    "location": "41.12,-71.34",
+    "name": "Ayush kataria",
+    "phone": 6370020831,
+    "schedule": {
+      "day": "Monday",
+      "slotTimeInMinutes": "15",
+      "workingTime": [
+        {
+          "endTime": "080000+0000",
+          "startTime": "100000+0000"
+        },
+        {
+          "endTime": "170000+0000",
+          "startTime": "190000+0000"
+        },
+        {
+          "endTime": "150000+0000",
+          "startTime": "170000+0000"
+        }
+      ],
+      "specialization": "Neurosurgeon",
+      "state": "Karnataka",
+      "yearsOfExperience": "24"
+    }
+  },
+  {
+    "address": "MasterCanteen,unit-3,Odisha,756401",
+    "ailmentsTreated": [
+      "Tooth cleaning",
+      "tooth repairing"
+    ],
+    "averageRating": "4.65",
+    "city": "Bhubaneswar",
+    "country": "India",
+    "designation": "Neurosurgeon",
+    "education": [
+      {
+        "degree": "MCh",
+        "description": "MCH is short for mean corpuscular hemoglobin",
+        "endDate": "1997",
+        "fieldOfStudy": "Neuro Surgery",
+        "grade": "A",
+        "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "startDate": "1995"
+      },
+      {
+        "degree": "MBBS",
+        "description": "Bachelor of Medicine Bachelor of Surgery",
+        "endDate": "1994",
+        "fieldOfStudy": "Neuro Surgery",
+        "grade": "A",
+        "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "startDate": "1989"
+      }
+    ],
+    "email": "nitishkumar@gmail.com",
+    "experience": [
+      {
+        "comapanyName": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "description": " Optimized the whole medical infrastructure",
+        "endDate": null,
+        "location": "Bangalore",
+        "startDate": "2000",
+        "title": "HOD and Professor of Neurosurgery Dept"
+      },
+      {
+        "comapanyName": "Srirama Chandra Bhanja Medical College and Hospital",
+        "description": "Handled thousand sof patients",
+        "endDate": "2000",
+        "location": "Cuttack",
+        "startDate": "1996",
+        "title": "HOD and Professor of Neurosurgery Dept"
+      }
+    ],
+    "firstName": "Nitish",
+    "gender": "male",
+    "hospital": {
+      "identifier": "74321",
+      "name": "Srirama Chandra Bhanja Medical College and Hospital"
+    },
+    "isPersonAllowed": "true",
+    "isVideoAllowed": "true",
+    "landmark": "Near JK Dance school",
+    "languages": "English, Hindi, Oriya",
+    "lastName": "Kataria",
+    "licenses": {
+      "identifier": "42345",
+      "name": "MBBS License",
+      "registrationYear": "15022022",
+      "validUpTo": "15022024",
+      "provider": "Delhi Medical Council"
+    },
+    "locality": "Old town, Bhubaneswar",
+    "location": "41.12,-71.34",
+    "name": "Nitish kumar",
+    "phone": 6370020831,
+    "schedule": {
+      "day": "Monday",
+      "slotTimeInMinutes": "15",
+      "workingTime": [
+        {
+          "endTime": "080000+0000",
+          "startTime": "100000+0000"
+        },
+        {
+          "endTime": "170000+0000",
+          "startTime": "190000+0000"
+        },
+        {
+          "endTime": "150000+0000",
+          "startTime": "170000+0000"
+        }
+      ],
+      "specialization": "Dentist",
+      "state": "Odisha",
+      "yearsOfExperience": "24"
+    }
+  },
+  {
+    "address": "Veerana Palya, Outer Ring Road, Landmark : Near Manyata Tech Park, Bangalore",
+    "ailmentsTreated": [
+      "Cancer",
+      "Skin Disease",
+      "Chemo"
+    ],
+    "averageRating": "4.65",
+    "city": "Bengaluru",
+    "country": "India",
+    "designation": "Neurosurgeon",
+    "education": [
+      {
+        "degree": "MCh",
+        "description": "MCH is short for mean corpuscular hemoglobin",
+        "endDate": "1997",
+        "fieldOfStudy": "Neuro Surgery",
+        "grade": "A",
+        "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "startDate": "1995"
+      },
+      {
+        "degree": "MBBS",
+        "description": "Bachelor of Medicine Bachelor of Surgery",
+        "endDate": "1994",
+        "fieldOfStudy": "Neuro Surgery",
+        "grade": "A",
+        "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "startDate": "1989"
+      }
+    ],
+    "email": "AkashGaikwad@gmail.com",
+    "experience": [
+      {
+        "comapanyName": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "description": " Optimized the whole medical infrastructure",
+        "endDate": null,
+        "location": "Bangalore",
+        "startDate": "2000",
+        "title": "HOD and Professor of Neurosurgery Dept"
+      },
+      {
+        "comapanyName": "Srirama Chandra Bhanja Medical College and Hospital",
+        "description": "Handled thousand sof patients",
+        "endDate": "2000",
+        "location": "Cuttack",
+        "startDate": "1996",
+        "title": "HOD and Professor of Neurosurgery Dept"
+      }
+    ],
+    "firstName": "Harsh",
+    "gender": "male",
+    "hospital": {
+      "identifier": "84321",
+      "name": "Srirama Chandra Bhanja Medical College and Hospital"
+    },
+    "isPersonAllowed": "true",
+    "isVideoAllowed": "true",
+    "landmark": "Near JK Dance school",
+    "languages": "English, Hindi, Marathi",
+    "lastName": "Gaikwad",
+    "licenses": {
+      "identifier": "22345",
+      "name": "MBBS License",
+      "registrationYear": "15022022",
+      "validUpTo": "15022024",
+      "provider": "Delhi Medical Council"
+    },
+    "locality": "Old town, Bengaluru",
+    "location": "41.12,-71.34",
+    "name": "Akash gaikwad",
+    "phone": 6370020831,
+    "schedule": {
+      "day": "Monday",
+      "slotTimeInMinutes": "15",
+      "workingTime": [
+        {
+          "endTime": "080000+0000",
+          "startTime": "100000+0000"
+        },
+        {
+          "endTime": "170000+0000",
+          "startTime": "190000+0000"
+        },
+        {
+          "endTime": "150000+0000",
+          "startTime": "170000+0000"
+        }
+      ],
+      "specialization": "Neurosurgeon",
+      "state": "Karnataka",
+      "yearsOfExperience": "24"
+    }
+  }
+]
