@@ -76,22 +76,22 @@
       "slotTimeInMinutes": "15",
       "workingTime": [
         {
-          "endTime": "080000+0000",
-          "startTime": "100000+0000"
+          "startTime": "080000+0000",
+          "endTime": "100000+0000"
         },
         {
-          "endTime": "170000+0000",
-          "startTime": "190000+0000"
+          "startTime": "170000+0000",
+          "endTime": "190000+0000"
         },
         {
-          "endTime": "150000+0000",
-          "startTime": "170000+0000"
+          "startTime": "150000+0000",
+          "endTime": "170000+0000"
         }
-      ],
-      "specialization": "Neurosurgeon",
-      "state": "Odisha",
-      "yearsOfExperience": "24"
-    }
+      ]
+    },
+    "specialization": "Neurosurgeon",
+    "state": "Odisha",
+    "yearsOfExperience": "24"
   },
   {
     "address": "Veerana Palya, Outer Ring Road, Landmark : Near Manyata Tech Park, Bangalore",
@@ -170,22 +170,22 @@
       "slotTimeInMinutes": "15",
       "workingTime": [
         {
-          "endTime": "080000+0000",
-          "startTime": "100000+0000"
+          "startTime": "080000+0000",
+          "endTime": "100000+0000"
         },
         {
-          "endTime": "170000+0000",
-          "startTime": "190000+0000"
+          "startTime": "170000+0000",
+          "endTime": "190000+0000"
         },
         {
-          "endTime": "150000+0000",
-          "startTime": "170000+0000"
+          "startTime": "150000+0000",
+          "endTime": "170000+0000"
         }
-      ],
-      "specialization": "Neurosurgeon",
-      "state": "Karnataka",
-      "yearsOfExperience": "24"
-    }
+      ]
+    },
+    "specialization": "Neurosurgeon",
+    "state": "Karnataka",
+    "yearsOfExperience": "24"
   },
   {
     "address": "MasterCanteen,unit-3,Odisha,756401",
@@ -263,22 +263,22 @@
       "slotTimeInMinutes": "15",
       "workingTime": [
         {
-          "endTime": "080000+0000",
-          "startTime": "100000+0000"
+          "startTime": "080000+0000",
+          "endTime": "100000+0000"
         },
         {
-          "endTime": "170000+0000",
-          "startTime": "190000+0000"
+          "startTime": "170000+0000",
+          "endTime": "190000+0000"
         },
         {
-          "endTime": "150000+0000",
-          "startTime": "170000+0000"
+          "startTime": "150000+0000",
+          "endTime": "170000+0000"
         }
-      ],
-      "specialization": "Dentist",
-      "state": "Odisha",
-      "yearsOfExperience": "24"
-    }
+      ]
+    },
+    "specialization": "Dentist",
+    "state": "Odisha",
+    "yearsOfExperience": "24"
   },
   {
     "address": "Veerana Palya, Outer Ring Road, Landmark : Near Manyata Tech Park, Bangalore",
@@ -357,21 +357,21 @@
       "slotTimeInMinutes": "15",
       "workingTime": [
         {
-          "endTime": "080000+0000",
-          "startTime": "100000+0000"
+          "startTime": "080000+0000",
+          "endTime": "100000+0000"
         },
         {
-          "endTime": "170000+0000",
-          "startTime": "190000+0000"
+          "startTime": "170000+0000",
+          "endTime": "190000+0000"
         },
         {
-          "endTime": "150000+0000",
-          "startTime": "170000+0000"
+          "startTime": "150000+0000",
+          "endTime": "170000+0000"
         }
-      ],
-      "specialization": "Neurosurgeon",
-      "state": "Karnataka",
-      "yearsOfExperience": "24"
-    }
+      ]
+    },
+    "specialization": "Neurosurgeon",
+    "state": "Karnataka",
+    "yearsOfExperience": "24"
   }
 ]
