@@ -1,16 +1,22 @@
 from elasticsearch import Elasticsearch
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-from index_mappings import doctor_mappings, schedule_mappings
+from index_mappings import doctor_mappings, schedule_mappings, user_mappings
+from dotenv import load_dotenv
+import os
 
-es_db = Elasticsearch("https://localhost:9200", basic_auth=('USER_NAME', 'USER_PASS'), verify_certs=False, ssl_show_warn=False)
+load_dotenv()
+USER_NAME = os.getenv("USER_NAME")
+USER_PASS = os.getenv("USER_PASS")
+print(USER_NAME)
+es_db = Elasticsearch("https://localhost:9200", basic_auth=(USER_NAME, USER_PASS), verify_certs=False, ssl_show_warn=False)
 
 indices_instructions = {
     "doctor": {
         "old_version": "v1",
         "new_version": "v2",
         "create": True,
-        "reindex_alias": True,
+        "reindex_alias": False,
         "reindex": False,
         "alias": False,
         "mapping": doctor_mappings
@@ -19,10 +25,19 @@ indices_instructions = {
         "old_version": "v1",
         "new_version": "v2",
         "create": True,
-        "reindex_alias": True,
+        "reindex_alias": False,
         "reindex": False,
         "alias": False,
         "mapping": schedule_mappings
+    },
+    "user": {
+        "old_version": "v1",
+        "new_version": "v2",
+        "create": True,
+        "reindex_alias": False,
+        "reindex": False,
+        "alias": False,
+        "mapping": user_mappings
     }
 }
 
