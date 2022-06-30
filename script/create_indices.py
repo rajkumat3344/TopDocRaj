@@ -1,23 +1,23 @@
 from elasticsearch import Elasticsearch
 from index_mappings import doctor_mappings, schedule_mappings
 
-es_db = Elasticsearch("https://localhost:9200", basic_auth=('USER_NAME', 'USER_PASS'), verify_certs=False, ssl_show_warn=False)
+es_db = Elasticsearch("https://localhost:9200", basic_auth=('elastic', 'j*+44bej_O0ZsUlUxFH5'), verify_certs=False, ssl_show_warn=False)
 
 indices_instructions = {
     "doctor": {
         "old_version": "v1",
-        "new_version": "v2",
+        "new_version": "v4",
         "create": True,
-        "reindex_alias": True,
+        "reindex_alias": False,
         "reindex": False,
         "alias": False,
         "mapping": doctor_mappings
     },
     "schedule": {
         "old_version": "v1",
-        "new_version": "v2",
+        "new_version": "v4",
         "create": True,
-        "reindex_alias": True,
+        "reindex_alias": False,
         "reindex": False,
         "alias": False,
         "mapping": schedule_mappings
