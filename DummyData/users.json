@@ -1,4 +1,5 @@
-[{
+[
+  {
     "name": "Amit kumar Jha",
     "first_name": "Amit",
     "last_name": "kumar jha",
@@ -6,11 +7,11 @@
     "gender": "Male",
     "id": "4d6ddceb-2465-4332-b943-8d407e9f9afe",
     "email": "amitkr@gmail.com",
-    "mobile":"+919999999999",
-    "address":"Line Bazaar",
-    "landmark":"shushant singh rajput chowk",
-    "locality":"Purnea sadar",
-    "city":"Purnea",
+    "mobile": "+919999999999",
+    "address": "Line Bazaar",
+    "landmark": "shushant singh rajput chowk",
+    "locality": "Purnea sadar",
+    "city": "Purnea",
     "state": "Bihar",
     "country": "India",
     "Zipcode": 854301,
@@ -19,30 +20,37 @@
     "blood_donor": true,
     "medical_records": {
       "blood_group": "O+",
-      "pre_existing_conditions":[{
-        "name":"Diabetes",
-        "duration": 2.5
-      }],
-      "allergies" : ["dust Allergy","Pollen allergy"],
-      "past_procedures": [{
-        "name":"Lasik surgery",
-        "date":"01-12-1990"
-      }],
+      "pre_existing_conditions": [
+        {
+          "name": "Diabetes",
+          "duration": 2.5
+        }
+      ],
+      "allergies": [
+        "dust Allergy",
+        "Pollen allergy"
+      ],
+      "past_procedures": [
+        {
+          "name": "Lasik surgery",
+          "date": "01-12-1990"
+        }
+      ],
       "smoker": false,
       "alcohol_user": false,
       "drug_user": false
     },
-    "insurance_details":{
+    "insurance_details": {
       "id": "12345658",
       "provider": "Policy Bazaar",
       "coverage": {
-        "start_date":"01-01-2020",
-        "end_date":"01-01-2021"
+        "start_date": "01-01-2020",
+        "end_date": "01-01-2021"
       },
       "documents": "xyz.pdf"
     },
-    "coins":10,
-    "isPremiumUser":false
+    "coins": 10,
+    "isPremiumUser": false
   },
   {
     "name": "Sai Sarthak Mohanty",
@@ -52,11 +60,11 @@
     "gender": "Male",
     "id": "pd6ddceb-2465-4332-b943-8d407e9f9afe",
     "email": "saisarthakmohanty1996@gmail.com",
-    "mobile":"+919999999999",
-    "address":"Line Bazaar",
-    "landmark":"shushant singh rajput chowk",
-    "locality":"Purnea sadar",
-    "city":"Purnea",
+    "mobile": "+919999999999",
+    "address": "Line Bazaar",
+    "landmark": "shushant singh rajput chowk",
+    "locality": "Purnea sadar",
+    "city": "Purnea",
     "state": "Bihar",
     "country": "India",
     "Zipcode": 854301,
@@ -65,30 +73,37 @@
     "blood_donor": true,
     "medical_records": {
       "blood_group": "O+",
-      "pre_existing_conditions":[{
-        "name":"Diabetes",
-        "duration": 2.5
-      }],
-      "allergies" : ["dust Allergy","Pollen allergy"],
-      "past_procedures": [{
-        "name":"Lasik surgery",
-        "date":"01-12-1990"
-      }],
+      "pre_existing_conditions": [
+        {
+          "name": "Diabetes",
+          "duration": 2.5
+        }
+      ],
+      "allergies": [
+        "dust Allergy",
+        "Pollen allergy"
+      ],
+      "past_procedures": [
+        {
+          "name": "Lasik surgery",
+          "date": "01-12-1990"
+        }
+      ],
       "smoker": false,
       "alcohol_user": false,
       "drug_user": false
     },
-    "insurance_details":{
+    "insurance_details": {
       "id": "12345688",
       "provider": "Policy Bazaar",
       "coverage": {
-        "start_date":"01-01-2020",
-        "end_date":"01-01-2021"
+        "start_date": "01-01-2020",
+        "end_date": "01-01-2021"
       },
       "documents": "xyz.pdf"
     },
-    "coins":10,
-    "isPremiumUser":false
+    "coins": 10,
+    "isPremiumUser": false
   },
   {
     "name": "Akash Neekhara",
@@ -98,11 +113,11 @@
     "gender": "Male",
     "id": "wd6ddceb-2465-4332-b943-8d407e9f9afe",
     "email": "Akashneekahara2000@gmail.com",
-    "mobile":"+919999999999",
-    "address":"Line Bazaar",
-    "landmark":"shushant singh rajput chowk",
-    "locality":"Purnea sadar",
-    "city":"Purnea",
+    "mobile": "+919999999999",
+    "address": "Line Bazaar",
+    "landmark": "shushant singh rajput chowk",
+    "locality": "Purnea sadar",
+    "city": "Purnea",
     "state": "Bihar",
     "country": "India",
     "Zipcode": 854301,
@@ -111,30 +126,37 @@
     "blood_donor": true,
     "medical_records": {
       "blood_group": "O+",
-      "pre_existing_conditions":[{
-        "name":"Diabetes",
-        "duration": 2.5
-      }],
-      "allergies" : ["dust Allergy","Pollen allergy"],
-      "past_procedures": [{
-        "name":"Lasik surgery",
-        "date":"01-12-1990"
-      }],
+      "pre_existing_conditions": [
+        {
+          "name": "Diabetes",
+          "duration": 2.5
+        }
+      ],
+      "allergies": [
+        "dust Allergy",
+        "Pollen allergy"
+      ],
+      "past_procedures": [
+        {
+          "name": "Lasik surgery",
+          "date": "01-12-1990"
+        }
+      ],
       "smoker": false,
       "alcohol_user": false,
       "drug_user": false
     },
-    "insurance_details":{
+    "insurance_details": {
       "id": "12345679",
       "provider": "Policy Bazaar",
       "coverage": {
-        "start_date":"01-01-2020",
-        "end_date":"01-01-2021"
+        "start_date": "01-01-2020",
+        "end_date": "01-01-2021"
       },
       "documents": "xyz.pdf"
     },
-    "coins":10,
-    "isPremiumUser":false
+    "coins": 10,
+    "isPremiumUser": false
   },
   {
     "name": "Shyamprasad Raghuvend Kanak Rao ",
@@ -144,11 +166,11 @@
     "gender": "Male",
     "id": "ld6ddceb-2465-4332-b903-8d407e9f9afe",
     "email": "Shyamprasadkr@gmail.com",
-    "mobile":"+919999999999",
-    "address":"Line Bazaar",
-    "landmark":"shushant singh rajput chowk",
-    "locality":"Purnea sadar",
-    "city":"Purnea",
+    "mobile": "+919999999999",
+    "address": "Line Bazaar",
+    "landmark": "shushant singh rajput chowk",
+    "locality": "Purnea sadar",
+    "city": "Purnea",
     "state": "Bihar",
     "country": "India",
     "Zipcode": 854301,
@@ -157,29 +179,36 @@
     "blood_donor": true,
     "medical_records": {
       "blood_group": "O+",
-      "pre_existing_conditions":[{
-        "name":"Diabetes",
-        "duration": 2.5
-      }],
-      "allergies" : ["dust Allergy","Pollen allergy"],
-      "past_procedures": [{
-        "name":"Lasik surgery",
-        "date":"01-12-1990"
-      }],
+      "pre_existing_conditions": [
+        {
+          "name": "Diabetes",
+          "duration": 2.5
+        }
+      ],
+      "allergies": [
+        "dust Allergy",
+        "Pollen allergy"
+      ],
+      "past_procedures": [
+        {
+          "name": "Lasik surgery",
+          "date": "01-12-1990"
+        }
+      ],
       "smoker": false,
       "alcohol_user": false,
       "drug_user": false
     },
-    "insurance_details":{
+    "insurance_details": {
       "id": "12345679",
       "provider": "Policy Bazaar",
       "coverage": {
-        "start_date":"01-01-2020",
-        "end_date":"01-01-2021"
+        "start_date": "01-01-2020",
+        "end_date": "01-01-2021"
       },
       "documents": "xyz.pdf"
     },
-    "coins":10,
-    "isPremiumUser":true
+    "coins": 10,
+    "isPremiumUser": true
   }
 ]
