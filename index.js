@@ -2,6 +2,7 @@ var express = require('express')
 //const bp = require('body-parser')
 
 var app = express()
+app.use(express.json());
 
 // app.use(bp.urlencoded({ extended: true }))
 // app.use(bp.json())
