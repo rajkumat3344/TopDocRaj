@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 const router = require('express').Router()
 const controller = require('./controller')
 
@@ -73,9 +71,7 @@ router.get('/v1/doctorDetail/:doctorId', getDocById)
 // router.put('/v1/doctorDetail', updateDocdetails)
 // router.delete('/v1/doctorDetail/:doctorId',deleteById)
 // router.delete('/v1/doctorDetail/:doctorName',deleteByName)
->>>>>>> 32fdac530f2bb481de2ffa750372746bff56f600
 
-var router = require('express').Router()
 let controller = require('./controller')
 
 
