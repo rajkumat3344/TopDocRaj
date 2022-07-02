@@ -25,11 +25,12 @@ const esdb = require('../../ESUtils/elasticSearch')
 //         return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
 //     }
 // }
- async function getDocDetailsById(Identifier, source) {
+
+async function getDocDetailsById(Identifier, source) {
     try{ 
         
             console.log("hello doctor controller id")
-
+        
             let queryBody = {
                 _source: source,
                 "query": {
@@ -40,9 +41,10 @@ const esdb = require('../../ESUtils/elasticSearch')
                     }
                 }
             }
-                     console.log("hello doctor controller id 2")
-            // return esdb.getData(queryBody, "doctor")
-            esdb.demo()
+                     console.log("hello doctor controller id 2") 
+            return esdb.getData(queryBody,"doctor")
+            //  esdb.demo()
+             
         }
 
 
@@ -113,11 +115,26 @@ const esdb = require('../../ESUtils/elasticSearch')
 //         return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
 //     }
 // }
-module.exports = 
-{
+
+// async function createNewDoctorAccount(object){
+//     try{
+//         const {v4 : uuidv4} = require('uuid')
+// const newId = uuidv4()
+// console.log("The request in controller is ",object)
+// console.log("The uuid is ",newId)
+// esdb.createEntity(object)
+//     }
+//     catch (err){
+
+//     }
+
+// }
+module.exports = {
     // getDocDetails,
-    getDocDetailsById
+    getDocDetailsById,
+    // createNewDoctorAccount
     // getDocDetailsByName,
-    // setDocDetailsByName,u
-    // pdateDocdetails
+    // setDocDetailsByName,
+    // updateDocdetails
 }
+
