@@ -11,4 +11,4 @@ app.use('/api', require('./routes/search/router'))
 app.use('/user', require('./routes/users/router'))
 app.use('/doctors',require('./routes/doctors/router'))
 
-smodule.exports = app
+module.exports = app

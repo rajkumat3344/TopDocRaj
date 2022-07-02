@@ -114,9 +114,24 @@ async function updateDocdetails(doctorId,doctorName) {
         return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
     }
 }
+
+async function createNewDoctorAccount(object){
+    try{
+        const {v4 : uuidv4} = require('uuid')
+const newId = uuidv4()
+console.log("The request in controller is ",object)
+console.log("The uuid is ",newId)
+esdb.createEntity(object)
+    }
+    catch (err){
+
+    }
+
+}
 module.exports = {
     // getDocDetails,
-    getDocDetailsById
+    getDocDetailsById,
+    createNewDoctorAccount
     // getDocDetailsByName,
     // setDocDetailsByName,
     // updateDocdetails
