@@ -16,12 +16,12 @@ const esdb = require('../../ESUtils/elasticSearch')
 // async function getDocDetails() {
 //     try{ 
         
-//             console.log("hello doctor controller")
+//             //console.log("hello doctor controller")
             
 //             connectClient()
         
 //         return doctors;
-//     }catch(err) { console.log('error block'+err)
+//     }catch(err) { //console.log('error block'+err)
 //         return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
 //     }
 // }
@@ -29,7 +29,7 @@ const esdb = require('../../ESUtils/elasticSearch')
 async function getDocDetailsById(Identifier, source) {
     try{ 
         
-            console.log("hello doctor controller id")
+            //console.log("hello doctor controller id")
         
             let queryBody = {
                 _source: source,
@@ -41,7 +41,7 @@ async function getDocDetailsById(Identifier, source) {
                     }
                 }
             }
-                     console.log("hello doctor controller id 2") 
+                     //console.log("hello doctor controller id 2") 
             return esdb.getData(queryBody,"doctor")
             //  esdb.demo()
              
@@ -56,7 +56,7 @@ async function getDocDetailsById(Identifier, source) {
         
         
     catch(err) {
-        return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
+        return { statuscode: 404, message: "There was some error in fetchig the doctors list"}
     }
 }
 
@@ -71,7 +71,7 @@ async function getDocDetailsById(Identifier, source) {
 // async function getDocDetailsByName(doctorName) {
 //     try{ 
         
-//             console.log("hello doctor controller name")
+//             //console.log("hello doctor controller name")
 //         const doctor =doctors.find(d => d.doctorName==doctorName)
 //         if(!doctor) throw error ;
 //         return doctor
@@ -86,7 +86,7 @@ async function getDocDetailsById(Identifier, source) {
 // async function setDocDetailsByName(doctorName) {
 //     try{ 
         
-//             console.log("hello doctor controller setname")
+//             //console.log("hello doctor controller setname")
 //         const doctor ={
 //             doctorId : doctors.length + 1,
 //             doctorName : doctorName
@@ -103,7 +103,7 @@ async function getDocDetailsById(Identifier, source) {
 // async function updateDocdetails(doctorId,doctorName) {
 //     try{ 
         
-//             console.log("hello doctor controller update")
+//             //console.log("hello doctor controller update")
 //             let doctor =doctors.find(d => d.doctorId===parseInt(doctorId))
 //             if(!doctor) throw error ;   
         
@@ -116,22 +116,29 @@ async function getDocDetailsById(Identifier, source) {
 //     }
 // }
 
-// async function createNewDoctorAccount(object){
-//     try{
-//         const {v4 : uuidv4} = require('uuid')
-// const newId = uuidv4()
-// console.log("The request in controller is ",object)
-// console.log("The uuid is ",newId)
-// esdb.createEntity(object)
-//     }
-//     catch (err){
+async function createNewDoctorAccount(object){
+    try{
+        const {v4 : uuidv4} = require('uuid')
+const newId = uuidv4()
+object.id=newId
+//console.log("The request in controller is ",object)
+//console.log("The uuid is ",newId)
 
-//     }
+let entityCreationObj=await esdb.createEntity(object,'doctor')
+//console.log("entityCreationObj",entityCreationObj)
+return { statuscode: 200, message: "Profile created Successfully"}
 
-// }
+    }
+    catch (err){
+        return { statuscode: 404, message: "There was some error in creating profile",err}
+
+    }
+
+}
 module.exports = {
     // getDocDetails,
     getDocDetailsById,
+    createNewDoctorAccount
     // createNewDoctorAccount
     // getDocDetailsByName,
     // setDocDetailsByName,
