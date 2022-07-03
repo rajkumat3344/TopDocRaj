@@ -2,7 +2,7 @@ const elasticsearch = require('elasticsearch');
 
 let elasticSearchClient=null
 
- var auth = 'elastic' + ":" + 'c_gILCMp_S=_3ZzV30Be'
+ var auth = 'elastic' + ":" + 'j*+44bej_O0ZsUlUxFH5'
  const connstring = "https://" + 'localhost' + ":" + '9200'
  const enable_password=true;
  function connectClient() {
@@ -72,6 +72,9 @@ let elasticSearchClient=null
     }
     function createEntity(object){
         console.log("Esdb invoked perfectly")
+        if (elasticSearchClient == null) {
+            connectClient();
+        }
     }
 
 
