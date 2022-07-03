@@ -42,8 +42,9 @@ async function getDocDetailsById(Identifier, source) {
                 }
             }
                      console.log("hello doctor controller id 2") 
-            // return esdb.getData(queryBody,"doctor")
-            return esdb.demo()
+            return esdb.getData(queryBody,"doctor")
+            //  esdb.demo()
+             
         }
 
 
@@ -67,72 +68,73 @@ async function getDocDetailsById(Identifier, source) {
 
 
 
-async function getDocDetailsByName(doctorName) {
-    try{ 
+// async function getDocDetailsByName(doctorName) {
+//     try{ 
         
-            console.log("hello doctor controller name")
-        const doctor =doctors.find(d => d.doctorName==doctorName)
-        if(!doctor) throw error ;
-        return doctor
+//             console.log("hello doctor controller name")
+//         const doctor =doctors.find(d => d.doctorName==doctorName)
+//         if(!doctor) throw error ;
+//         return doctor
         
         
-    }catch(err) {
-        return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
-    }
-}
+//     }catch(err) {
+//         return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
+//     }
+// }
 
 
-async function setDocDetailsByName(doctorName) {
-    try{ 
+// async function setDocDetailsByName(doctorName) {
+//     try{ 
         
-            console.log("hello doctor controller setname")
-        const doctor ={
-            doctorId : doctors.length + 1,
-            doctorName : doctorName
-        };
-       doctors.push(doctor);
-        return doctor
+//             console.log("hello doctor controller setname")
+//         const doctor ={
+//             doctorId : doctors.length + 1,
+//             doctorName : doctorName
+//         };
+//        doctors.push(doctor);
+//         return doctor
         
         
-    }catch(err) {
-        return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
-    }
-}
+//     }catch(err) {
+//         return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
+//     }
+// }
 
-async function updateDocdetails(doctorId,doctorName) {
-    try{ 
+// async function updateDocdetails(doctorId,doctorName) {
+//     try{ 
         
-            console.log("hello doctor controller update")
-            let doctor =doctors.find(d => d.doctorId===parseInt(doctorId))
-            if(!doctor) throw error ;   
+//             console.log("hello doctor controller update")
+//             let doctor =doctors.find(d => d.doctorId===parseInt(doctorId))
+//             if(!doctor) throw error ;   
         
-       doctor.doctorName = doctorName
-        return doctor
+//        doctor.doctorName = doctorName
+//         return doctor
         
         
-    }catch(err) {
-        return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
-    }
-}
+//     }catch(err) {
+//         return { statuscode: 404, message: "There is some error in fatchig the doctors list"}
+//     }
+// }
 
-async function createNewDoctorAccount(object){
-    try{
-        const {v4 : uuidv4} = require('uuid')
-const newId = uuidv4()
-console.log("The request in controller is ",object)
-console.log("The uuid is ",newId)
-esdb.createEntity(object)
-    }
-    catch (err){
+// async function createNewDoctorAccount(object){
+//     try{
+//         const {v4 : uuidv4} = require('uuid')
+// const newId = uuidv4()
+// console.log("The request in controller is ",object)
+// console.log("The uuid is ",newId)
+// esdb.createEntity(object)
+//     }
+//     catch (err){
 
-    }
+//     }
 
-}
+// }
 module.exports = {
     // getDocDetails,
     getDocDetailsById,
-    createNewDoctorAccount
+    // createNewDoctorAccount
     // getDocDetailsByName,
     // setDocDetailsByName,
     // updateDocdetails
 }
+

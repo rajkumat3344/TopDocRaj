@@ -1,4 +1,5 @@
 const elasticsearch = require('elasticsearch');
+const { json } = require('express');
 
 let elasticSearchClient=null
 
@@ -7,7 +8,7 @@ let elasticSearchClient=null
  const enable_password=true;
  function connectClient() {
      if (enable_password == true) {
-        console.log('inside if')
+        console.log('inside iffffffffffff')
          elasticSearchClient = new elasticsearch.Client({
              host: [{
                  host: 'localhost',
@@ -52,19 +53,36 @@ let elasticSearchClient=null
         console.log("hello elastic ")
         if (elasticSearchClient == null) {
             connectClient();
+            console.log("1111")
         }
-        return new Promise((resolve, reject) => {
-            elasticSearchClient.search({
-                index: indexDict[paramIndex],
-                body: queryBody
-            }).then((result) => {
-                log.info('Results: ' + result);
-                resolve(result)
-            }).catch((err) => {
-                log.error('error: ' + err);
-                reject(err)
-            })
-        })
+        // return new Promise((resolve, reject) => {
+    //       elasticSearchClient.search({
+    //             index: paramIndex,
+    //             body: queryBody
+                
+        //     }).then((result) => {
+        //         console.log("33333")
+        //         log.info('Results: ' + result);
+        //         resolve(result)
+        //     }).catch((err) => {
+        //         console.log("444444444")
+        //         log.error('error: ' + err);
+        //         reject(err)
+        //     })
+        // })
+        
+    return elasticSearchClient.search({
+        index: paramIndex,
+        body: queryBody
+    }).then(function(resp) {
+        console.log("here")
+        if(resp.hits.total.value==1)
+        return resp.hits;
+        else
+        return   { statuscode: 404, message: "No such doctor exist"}
+
+    });
+
     }
 
     function demo(){
