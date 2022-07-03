@@ -59,7 +59,7 @@ let elasticSearchClient=null
     //       elasticSearchClient.search({
     //             index: paramIndex,
     //             body: queryBody
-                
+            
         //     }).then((result) => {
         //         console.log("33333")
         //         log.info('Results: ' + result);
@@ -76,10 +76,10 @@ let elasticSearchClient=null
         body: queryBody
     }).then(function(resp) {
         console.log("here")
-        if(resp.hits.total.value==1)
-        return resp.hits;
+        if(resp.hits.total.value==0)
+        return   { statuscode: 404, message: "No such doctor exist"} 
         else
-        return   { statuscode: 404, message: "No such doctor exist"}
+        return resp.hits;
 
     });
 
