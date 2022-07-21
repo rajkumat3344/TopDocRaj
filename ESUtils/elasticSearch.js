@@ -53,7 +53,7 @@ let elasticSearchClient=null
         //console.log("hello elastic ")
         if (elasticSearchClient == null) {
             connectClient();
-            //console.log("1111")
+            console.log("1111")
         }
         // return new Promise((resolve, reject) => {
     //       elasticSearchClient.search({
@@ -70,12 +70,12 @@ let elasticSearchClient=null
         //         reject(err)
         //     })
         // })
-        
+        console.log("The id is "+JSON.stringify(queryBody)+"param index is "+paramIndex)
     return elasticSearchClient.search({
         index: paramIndex,
         body: queryBody
     }).then(function(resp) {
-        //console.log("here")
+       console.log("here",resp)
         if(resp.hits.total.value==1)
         return resp.hits;
         else

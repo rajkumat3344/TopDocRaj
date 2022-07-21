@@ -84,9 +84,9 @@ function createNewDoctorAccount(req, res) {
 else if(req.body.hasOwnProperty('ailmentsTreated') == false ){
     res.status(400).send("bad request, ailmentsTreated field is missing")
 }
-else if(req.body.hasOwnProperty('averageRating') == false ){
-  res.status(400).send("bad request, averageRating field is missing")
-}
+// else if(req.body.hasOwnProperty('averageRating') == false ){
+//   res.status(400).send("bad request, averageRating field is missing")
+// }
 else if(req.body.hasOwnProperty('city') == false ){
   res.status(400).send("bad request, city field is missing")
 }
@@ -132,7 +132,6 @@ res.status(400).send("bad request, languages field is missing")
 else if(req.body.hasOwnProperty('lastName') == false ){
 res.status(400).send("bad request, lastName field is missing")
 }
-
 else if(req.body.hasOwnProperty('licenses') == false ){
   res.status(400).send("bad request, licenses field is missing")
 }

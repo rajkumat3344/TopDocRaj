@@ -32,7 +32,7 @@ async function getDocDetailsById(Identifier, source) {
             //console.log("hello doctor controller id")
         
             let queryBody = {
-                _source: source,
+              //  _source: source,
                 "query": {
                     "term": {
                          "_id": {
