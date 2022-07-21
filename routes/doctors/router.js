@@ -1,77 +1,101 @@
 const router = require('express').Router()
 const controller = require('./controller')
+const docPostSchema = require('./docPostSchema')
 
-// function getDocDetails(req,res){
-//     //console.log("hello doctor router")
-   
-//     controller.getDocDetails()
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-
-
-function getDocById(req,res){
-    
-    //console.log("hello doctor router id")
-    let doctorId =req.params.doctorId;  
-    controller.getDocDetailsById(doctorId)
+//get doctor details by his/her id
+function getProfileDetails(req,res){
+  let doctorId
+  let fieldsToFetch
+  let role 
+  console.log("hello doctor router id")
+  if (req.body.hasOwnProperty('id') == false || req.body.id == null || req.body.id == "") {
+    res.status(400).send("bad request , id cannot be empty")
+  } else if (req.body.hasOwnProperty('role') == false || req.body.role == null || req.body.role == "") {
+    res.status(400).send("bad request , role cannot be empty")
+  }
+  else{ 
+    doctorId = req.body.id;
+    role = req.body.role;
+    fieldsToFetch = req.body.fields;
+  } 
+  controller.getProfileDetailsController(doctorId,role,fieldsToFetch)
         .then(data => res.send(data))
         .catch(err => res.status(err.statuscode).send(err))
 }
 
 
-// function getDocByName(req,res){
-//     //console.log("hello doctor router name")
-//     let doctorName=req.params.doctorName;
+//update doctor details
+// languages,email,address,ailmentsTreated,city ,firstName ,lastName, name ,gender, landmark ,locality, phone ,state ,yearsOfExperience 
+//notIncluded-->country,designation,education,experience,hospital,isPersonAllowed,isVideoAllowed,licenses,location,schedule,specialization
+function updateDocProfile(req, res) {
+  let queryBody = docPostSchema();
+  
    
-//     controller.getDocDetailsByName(doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-
-// function setDocByName(req,res){
-//     //console.log("hello doctor router setname")
-//     let doctorName=req.body.doctorName;
-   
-//     controller.setDocDetailsByName(doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-// function updateDocdetails(req,res){
-//     //console.log("hello doctor router update")
-//     let doctorName=req.body.doctorName;
-//     let doctorId=req.body.doctorId;
-   
-//     controller.updateDocdetails(doctorId,doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-// function deleteById(req,res){
-//     //console.log("hello doctor router update")
-//     let doctorName=req.body.doctorName;
-//     let doctorId=req.body.doctorId;
-   
-//     controller.updateDocdetails(doctorId,doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-// function updateDocdetails(req,res){
-//     //console.log("hello doctor router update")
-//     let doctorName=req.body.doctorName;
-//     let doctorId=req.body.doctorId;
-   
-//     controller.updateDocdetails(doctorId,doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-// router.get('/v1/doctorDetail/', getDocDetails)
-
-// router.get('/v1/doctorDetail/:doctorName', getDocByName)
-// router.post('/v1/doctorDetail', setDocByName)
-// router.put('/v1/doctorDetail', updateDocdetails)
-// router.delete('/v1/doctorDetail/:doctorId',deleteById)
-// router.delete('/v1/doctorDetail/:doctorName',deleteByName)
-
+  let doctorId =req.body.id;  
+  // console.log((Object.keys(req.body)[1]));
+  // controller.updateDocLanguage(doctorId,req.body.language)
+  //     .then(data => res.send(data))
+  //     .catch(err => res.status(err.statuscode).send(err))
+  if(req.body.hasOwnProperty("languages")){ 
+  controller.updateDocLanguage(doctorId,req.body.languages,"languages")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("email")){ 
+  controller.updateDocLanguage(doctorId,req.body.email,"email")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("address")){ 
+  controller.updateDocLanguage(doctorId,req.body.address,"address")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("ailmentsTreated")){
+  controller.updateDocLanguage(doctorId,req.body.ailmentsTreated,"ailmentsTreated")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("city")){
+  controller.updateDocLanguage(doctorId,req.body.city,"city")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("firstName")){ 
+  controller.updateDocLanguage(doctorId,req.body.firstName,"firstName")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("lastName")){  
+  controller.updateDocLanguage(doctorId,req.body.lastName,"lastName")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("name")){ 
+  controller.updateDocLanguage(doctorId,req.body.name,"name")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("gender")){
+  controller.updateDocLanguage(doctorId,req.body.gender,"gender")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("landmark")){
+  controller.updateDocLanguage(doctorId,req.body.landmark,"landmark")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("locality")){
+  controller.updateDocLanguage(doctorId,req.body.locality,"locality")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("phone")){
+  controller.updateDocLanguage(doctorId,req.body.phone,"phone")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("state")){
+  controller.updateDocLanguage(doctorId,req.body.state,"state")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else if(req.body.hasOwnProperty("yearsOfExperience")){
+  controller.updateDocLanguage(doctorId,req.body.yearsOfExperience,"yearsOfExperience")
+      .then(data => res.send(data))
+      .catch(err => res.status(err.statuscode).send(err))
+  }else{
+    res.status(400).send({ statuscode: 400, message: "bad request, required field is missing"})
+  }
+}
 
 
 
@@ -168,6 +192,7 @@ else{
 }
 }
 
-router.get('/v1/doctorDetail/:doctorId', getDocById)
+router.post('/v1/doctorDetail', getProfileDetails)
 router.post('/create',createNewDoctorAccount)
+router.put('/v1/doctorDetail/updateLanguage', updateDocProfile)
 module.exports = router
