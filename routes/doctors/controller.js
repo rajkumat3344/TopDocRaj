@@ -38,12 +38,11 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
   }
 }
 
-//update doctor language
-async function updateDocLanguage(Identifier, body) {
+//update profile data
+async function updateProfileDetailsController(Identifier, role , updateFields) {
   try {
-    return esdb.updateData("doctor", Identifier, body);
+    return esdb.updateData(role, Identifier, updateFields);
   } catch (err) {
-    console.log(err);
     return {
       statuscode: 404,
       message: "There was some error in fetchig the doctors list",
@@ -74,5 +73,5 @@ async function createNewDoctorAccount(object) {
 module.exports = {
   getProfileDetailsController,
   createNewDoctorAccount,
-  updateDocLanguage,
+ updateProfileDetailsController,
 };

@@ -1,6 +1,65 @@
 doctor_mappings = {
     "mappings": {
         "properties": {
+            "docImageUrl":{
+                "enabled" : false
+            },
+            "tags" : {
+                "type": "nested",
+                "properties": {
+                    "tagName": {
+                        "type": "keyword"
+                    },
+                    "description": {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "noOfReviews" : {
+            "type" : "long"
+            },
+            "consultations" : {
+            "type" : "long"
+            },
+            "satisfiedPatients" : {
+                "type": "long"
+            },
+            "awardsAndPublications":{
+                "type" : "nested",
+                "properties": {
+                    "awardName":{
+                        "type":"keyword"
+                    },
+                    "place":{
+                        "type":"keyword"
+                    },
+                    "date":{
+                        "type": "date"
+                    }
+                }
+            },
+            "associatedClinics" : {
+                "type": "nested",
+                "properties": {
+                    "clinicName": {
+                        "type": "keyword"
+                    },
+                    "location": {
+                        "type": "keyword"
+                    },
+                    "fees": {
+                        "type": "float"
+                    },
+                    ,
+                    "tagReceived": {
+                        "type": "keyword"
+                    },
+                    ,
+                    "schedule": {
+                        "type": "date"
+                    }
+                }
+            },
             "address": {
                 "type": "text",
                 "fields": {
@@ -71,7 +130,7 @@ doctor_mappings = {
             "experience": {
                 "type": "nested",
                 "properties": {
-                        "comapanyName": {
+                        "organisation": {
                             "type": "keyword"
                         },
                     "description": {
@@ -200,7 +259,7 @@ doctor_mappings = {
                 }
             },
             "specialization": {
-                "type": "text",
+                "type": "nested",
                 "fields": {
                         "keyword": {
                             "type": "keyword"
