@@ -2,7 +2,7 @@ const elasticsearch = require('elasticsearch');
 const { json } = require('express');
 
 let elasticSearchClient=null
-
+//Akash Elastic pass
  var auth = 'elastic' + ":" + 'cmlflG69YzfuZMgN=DUb'
  const connstring = "https://" + 'localhost' + ":" + '9200'
  const enable_password=true;

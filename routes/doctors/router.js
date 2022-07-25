@@ -4,33 +4,6 @@ const docAttributeList = require("./constants/docAttributeList");
 const _ = require("underscore");
 const cloudinary = require('cloudinary').v2
 
-<<<<<<< HEAD
-
-function getDocById(req,res){
-    
-    //console.log("hello doctor router id")
-    let doctorId =req.params.doctorId;  
-    controller.getDocDetailsById(doctorId)
-        .then(data => res.send(data))
-        .catch(err => res.status(err.statuscode).send(err))
-}
-
-// Update doctor's Language 
-
-function updateLanguage(req,res){
-    
-  let doctorId =req.body.id;  
-  if(req.body.hasOwnProperty('id') == false || req.body.id == null || req.body.id == ""){
-    res.status(400).send("bad request, id cannot be empty")
-} else if(req.body.hasOwnProperty('language') == false || req.body.language == null || req.body.language == ""){
-  res.status(400).send("bad request, langauge cannot be empty")
-}else{controller.updateLanguage(doctorId,req.body.language)
-  .then(data => res.send(data))
-  .catch(err => res.status(err.statuscode).send(err))
-}
-
-  
-=======
 cloudinary.config({ 
   cloud_name: 'sam7566', 
   api_key: '697775673339567', 
@@ -109,7 +82,6 @@ function uploadProfileImage(req, res) {
     // console.log(req.body)
     updateProfileDetails(req, res)
   })
->>>>>>> 449983e46e074372af6fb8d9c80b62b23d3fcc8e
 }
 
 //Create new Doctor Account
@@ -175,18 +147,8 @@ function createNewDoctorAccount(req, res) {
   }
 }
 
-<<<<<<< HEAD
-router.get('/v1/doctorDetail/:doctorId', getDocById)
-router.post('/create',createNewDoctorAccount)
-
-router.post('/updateLanguage',updateLanguage)
-
-module.exports = router
-
-=======
 router.post("/v1/doctorDetail", getProfileDetails);
 router.post("/v1/doctorDetail/imageUpload", uploadProfileImage);
 router.post("/create", createNewDoctorAccount);
 router.put("/v1/doctorDetail/updateDetails", updateProfileDetails);
 module.exports = router;
->>>>>>> 449983e46e074372af6fb8d9c80b62b23d3fcc8e
