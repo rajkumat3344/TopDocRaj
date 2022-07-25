@@ -126,7 +126,6 @@ console.log('Hii.');
         index: paramIndex,
         body: queryBody
     }).then(function(resp) {
-        console.log(resp)
         if(resp.hits.total.value==0)
         return   { statuscode: 404, message: "No such doctor exist"}   
         else
