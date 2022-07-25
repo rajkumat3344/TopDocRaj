@@ -1,14 +1,6 @@
 const router = require('express').Router()
 const controller = require('./controller')
 
-// function getDocDetails(req,res){
-//     //console.log("hello doctor router")
-   
-//     controller.getDocDetails()
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-
 
 function getDocById(req,res){
     
@@ -19,61 +11,22 @@ function getDocById(req,res){
         .catch(err => res.status(err.statuscode).send(err))
 }
 
+// Update doctor's Language 
 
-// function getDocByName(req,res){
-//     //console.log("hello doctor router name")
-//     let doctorName=req.params.doctorName;
-   
-//     controller.getDocDetailsByName(doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
+function updateLanguage(req,res){
+    
+  let doctorId =req.body.id;  
+  if(req.body.hasOwnProperty('id') == false || req.body.id == null || req.body.id == ""){
+    res.status(400).send("bad request, id cannot be empty")
+} else if(req.body.hasOwnProperty('language') == false || req.body.language == null || req.body.language == ""){
+  res.status(400).send("bad request, langauge cannot be empty")
+}else{controller.updateLanguage(doctorId,req.body.language)
+  .then(data => res.send(data))
+  .catch(err => res.status(err.statuscode).send(err))
+}
 
-// function setDocByName(req,res){
-//     //console.log("hello doctor router setname")
-//     let doctorName=req.body.doctorName;
-   
-//     controller.setDocDetailsByName(doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-// function updateDocdetails(req,res){
-//     //console.log("hello doctor router update")
-//     let doctorName=req.body.doctorName;
-//     let doctorId=req.body.doctorId;
-   
-//     controller.updateDocdetails(doctorId,doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-// function deleteById(req,res){
-//     //console.log("hello doctor router update")
-//     let doctorName=req.body.doctorName;
-//     let doctorId=req.body.doctorId;
-   
-//     controller.updateDocdetails(doctorId,doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-// function updateDocdetails(req,res){
-//     //console.log("hello doctor router update")
-//     let doctorName=req.body.doctorName;
-//     let doctorId=req.body.doctorId;
-   
-//     controller.updateDocdetails(doctorId,doctorName)
-//         .then(data => res.send(data))
-//         .catch(err => res.status(err.statuscode).send(err))
-// }
-// router.get('/v1/doctorDetail/', getDocDetails)
-
-// router.get('/v1/doctorDetail/:doctorName', getDocByName)
-// router.post('/v1/doctorDetail', setDocByName)
-// router.put('/v1/doctorDetail', updateDocdetails)
-// router.delete('/v1/doctorDetail/:doctorId',deleteById)
-// router.delete('/v1/doctorDetail/:doctorName',deleteByName)
-
-
-
+  
+}
 
 //Create new Doctor Account
 function createNewDoctorAccount(req, res) {
@@ -171,4 +124,8 @@ else{
 
 router.get('/v1/doctorDetail/:doctorId', getDocById)
 router.post('/create',createNewDoctorAccount)
+
+router.post('/updateLanguage',updateLanguage)
+
 module.exports = router
+

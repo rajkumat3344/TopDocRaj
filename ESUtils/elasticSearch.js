@@ -3,12 +3,12 @@ const { json } = require('express');
 
 let elasticSearchClient=null
 
- var auth = 'elastic' + ":" + 'j*+44bej_O0ZsUlUxFH5'
+ var auth = 'elastic' + ":" + 'cmlflG69YzfuZMgN=DUb'
  const connstring = "https://" + 'localhost' + ":" + '9200'
  const enable_password=true;
  function connectClient() {
      if (enable_password == true) {
-        ////console.log('inside iffffffffffff')
+        console.log('inside iffffffffffff');
          elasticSearchClient = new elasticsearch.Client({
              host: [{
                  host: 'localhost',
@@ -22,7 +22,7 @@ let elasticSearchClient=null
          });
      }
      else {
-        ////console.log('inside else')
+        console.log('inside else')
          elasticSearchClient = new elasticsearch.Client({
              host: connstring,
              log: 'trace',
@@ -32,10 +32,10 @@ let elasticSearchClient=null
  
     elasticSearchClient.ping({ requestTimeout: 30000, }, function (error) {
         if (error) {
-            //console.log('Elasticsearch is down :' + error);
+            console.log('Elasticsearch is down :' + error);
         }
         else {
-            //console.log('Elasicsearch up and running!!')
+            console.log('Elasicsearch up and running!!')
         }
     });
 
@@ -43,17 +43,68 @@ let elasticSearchClient=null
 
 }
 
-
+function updateData(id, paramIndex,updateField) {
+    console.log(id +" "+ paramIndex+" "+ updateField);
+    if (elasticSearchClient == null) {
+        console.log("get");
+        connectClient();
+    }
+    // return new Promise((resolve, reject) => {
+    //  return elasticSearchClient.update({
+    //     index: paramIndex,
+    //     name: "Harsh Bhargav",
+    //     doc: {
+    //         languages: updateField
+    //     }
+            
+    //     })
+        return new Promise((resolve, reject) => {
+            elasticSearchClient.update({
+                index: paramIndex,
+                name: "Harsh Bhargav",
+                body: {
+                    languages: updateField
+                }
+            }).then((result) => {
+               
+                
+            }).catch((err) => {
+               console.log('error: ' + err);
+                reject(result)
+            })
+        })
+    //     .then((result) => {
+    //         //console.log("33333")
+         
+    //         resolve(result)
+    //     }).catch((err) => {
+    //         console.log(err)
+           
+    //         reject(err)
+    //     })
+    // })
+    
+// return elasticSearchClient.update({
+//     index: paramIndex,
+//     _id: id,
+//     script: {
+//         languages: updateField
+//     }
+// }).then(function(resp) {
+//     if(resp.hits.total.value==0)
+//     return   { statuscode: 404, message: "No such doctor exist"}   
+//     else
+//     return resp.hits;
+// });
+console.log('Hii.');
+}
 
 
 
     function getData(queryBody, paramIndex) {
-        ////console.log("index : ",indexDict[paramIndex])
-        ////console.log("Type : ",indexDict[paramType])
-        //console.log("hello elastic ")
+       
         if (elasticSearchClient == null) {
             connectClient();
-            //console.log("1111")
         }
         // return new Promise((resolve, reject) => {
     //       elasticSearchClient.search({
@@ -75,19 +126,15 @@ let elasticSearchClient=null
         index: paramIndex,
         body: queryBody
     }).then(function(resp) {
-        //console.log("here")
-        if(resp.hits.total.value==1)
-        return resp.hits;
+        console.log(resp)
+        if(resp.hits.total.value==0)
+        return   { statuscode: 404, message: "No such doctor exist"}   
         else
-        return   { statuscode: 404, message: "No such doctor exist"}
-
+        return resp.hits;
     });
 
     }
 
-    function demo(){
-       return //console.log("function called")
-    }
     function createEntity(object,paramIndex){
       //  //console.log("Esdb invoked perfectly",object)
         if (elasticSearchClient == null) {
@@ -133,7 +180,7 @@ let elasticSearchClient=null
     module.exports = {
         getData,
         createEntity,
-        demo
+    updateData
         // createData,
         // updateData,
         // deleteData,

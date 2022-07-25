@@ -1,5 +1,6 @@
 var router = require('express').Router()
 
+
 function getDetails(req, res) {
     let doctorId = req.params.doctorId
     
@@ -9,11 +10,155 @@ function getDetails(req, res) {
 }
 
 
+router.post('/searchv1',function(req,res){
+    if(req.body.hasOwnProperty('query') == false || req.body.rootOrg == null || req.body.rootOrg == ""){
+        res.status(400).send("bad request, rootOrg cannot be empty")
+    }
+    else{
+        if (req.body.hasOwnProperty('pageNo') == false || req.body.pageNo == "") {
+            pageNo = 0
+        }
+        else{
+            pageNo = Number(req.body.pageNo)
+        }
+        if (req.body.hasOwnProperty('pageSize') == false || req.body.pageSize == null) {
+            pageSize = 10
+        }
+        else{
+            pageSize = Number(req.body.pageSize)
+        }
+        controller.searchv1(req.body,pageNo,pageSize)
+        .then(data => res.send(data))
+        .catch(err => res.status(err.statuscode).send(err))
+    }
+});
+
 
 
 router.get('/v1/search/doctor', getDetails)
 // router.get('/v1/search/user', getSchedule)
 // router.get('/v1/appointment/book/', getSchedule)
 
+
+
+//---------------Akash-----------------
+
+
+
+function getSearchDetails(req, res) {
+    console.log("chal de bhai")
+    pageSize =10;
+    pageNo=0;
+    didYouMean= false;
+    applyLTR=false;
+    highlight=false;
+    isStandAlone = false
+    if(req.body.hasOwnProperty('query') == false || req.body.query == null || req.body.query == ""){
+        res.status(400).send("bad request, query cannot be empty")
+    }
+    else{
+        // Pagintion
+        if(req.body.hasOwnProperty('pageNo') == false){
+            res.status(400).send("bad request, pageNo field is missing")
+        }
+        else  {
+           
+                pageNo = Number(req.body.pageNo)
+         
+        }
+        if(req.body.hasOwnProperty('pageSize') == false){
+            res.status(400).send("bad request, pageSize field is missing")
+        }
+        else  {
+            
+                pageSize = Number(req.body.pageNo)
+          
+        }    
+        if(req.body.hasOwnProperty('didYouMean') == false){
+                res.status(400).send("bad request, didYouMean field is missing")
+        }
+        else  {
+               
+                    didYouMean = Boolean(req.body.didYouMean)
+              
+        }
+        if(req.body.hasOwnProperty('applyLTR') == false){
+                    res.status(400).send("bad request, applyLTR field is missing")
+                }
+        else  {
+                   
+                        applyLTR = Boolean(req.body.applyLTR)
+                  
+        }
+        if(req.body.hasOwnProperty('highlight') == false){
+                        res.status(400).send("bad request, highlight field is missing")
+                    }
+        else  {
+               
+                    highlight = Boolean(req.body.highlight)
+           
+        }
+        //filter code
+//         const filters = req.query;
+//   const filteredUsers = data.filter(user => {
+//     let isValid = true;
+//     for (key in filters) {
+//       console.log(key, user[key], filters[key]);
+//       isValid = isValid && user[key] == filters[key];
+//     }
+//     return isValid;
+//   });
+//   res.send(filteredUsers);
+
+
+//VisibleFilter
+        if (req.body.hasOwnProperty('visibleFilters') == false){
+            res.status(400).send("bad request, visibleFilters field is missing")
+        } 
+        else{
+            if(req.body.visibleFilters == null || req.body.visibleFilters == ""){
+               // visibleFilters = "All" 
+            }else{
+                  // const filters = req.body.visibleFilters
+                 // console.log(filters)
+                let visibleFilter = req.body.visibleFilters //["specialization" , "languages"]
+                let filters = ["yearsOfExperience", "languages", "specialization", "isVideoAllowed", "gender", 'country', 'averageRating', 'city']
+                for( i =0; i<visibleFilter.length;i++){
+                    if(!filters.includes(visibleFilter[i])){
+                        res.status(400).send("bad request, filter cannot be done based on the given parameter")
+                        break;
+                    }    
+                }
+               
+            }
+        }
+
+        if (req.body.hasOwnProperty('isStandAlone') == false ){
+            res.status(400).send("bad request, isStandAlone field is missing")
+        } 
+         else{
+           isStandAlone = Boolean(req.body.isStandAlone)
+         } 
+
+
+//          //sorting
+         if(req.body.sort){
+            //sort[req.body.sort]  === 'desc' ? -1 : 1
+            // aggregate_options.push({$sort: {"data.start_date": sortOrder}});
+            let sortBy = req.body.sort
+            const sortList = ["yearsOfExperience", "recommendation", "relevence", "earliestAvailable", "price"]
+            for( i =0; i<sortBy.length;i++){
+                if(!sortList.includes(sortBy)){
+                    res.status(400).send("bad request, sorting cannot be done based on the given parameter")
+                }
+            }
+           
+        }
+        controller.getSearchDetails(req.body,pageNo,pageSize)
+        .then(data => res.send(data))
+        .catch(err => res.status(err.statuscode).send(err))
+    }
+}
+router.post('/doctorSearch', getSearchDetails)
 
 module.exports = router

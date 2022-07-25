@@ -58,7 +58,7 @@
     "isPersonAllowed": "true",
     "isVideoAllowed": "true",
     "landmark": "Near JK Dance school",
-    "languages": "[English, Hindi, Oriya]",
+    "languages": ["English", "Hindi", "Oriya"],
     "lastName": "Bhargav",
     "licenses": {
       "identifier": "12345",
