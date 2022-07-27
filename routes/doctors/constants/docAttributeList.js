@@ -11,6 +11,7 @@ module.exports = () => ([
     "firstName",
     "gender",
     "hospital",
+    "identifier",
     "isPersonAllowed",
     "isVideoAllowed",
     "landmark",
@@ -27,5 +28,12 @@ module.exports = () => ([
     "yearsOfExperience",
     "id",
     "role",
-    "docImageUrl"
+    "docImageUrl",
+    "tags",
+    "noOfReviews",
+    "consultations",
+    "satisfiedPatients",
+    "awardsAndPublications",
+    "associatedClinics",
+
 ])

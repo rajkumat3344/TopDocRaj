@@ -50,14 +50,31 @@ doctor_mappings = {
                     "fees": {
                         "type": "float"
                     },
-                    ,
                     "tagReceived": {
                         "type": "keyword"
                     },
-                    ,
                     "schedule": {
-                        "type": "date"
+                "properties": {
+                    "day": {
+                        "type": "keyword"
+                    },
+                    "slotTimeInMinutes": {
+                        "type": "long"
+                    },
+                    "workingTime": {
+                        "properties": {
+                            "endTime": {
+                                "type": "date",
+                                "format": "basic_time_no_millis"
+                            },
+                            "startTime": {
+                                "type": "date",
+                                "format": "basic_time_no_millis"
+                            }
+                        }
                     }
+                }
+            }
                 }
             },
             "address": {
@@ -108,10 +125,7 @@ doctor_mappings = {
                     "fieldOfStudy": {
                             "type": "keyword"
                     },
-                    "grade": {
-                            "type": "keyword"
-                    },
-                    "school": {
+                    "institute": {
                             "type": "keyword"
                     },
                     "startDate": {
@@ -259,7 +273,7 @@ doctor_mappings = {
                 }
             },
             "specialization": {
-                "type": "nested",
+                "type": "text",
                 "fields": {
                         "keyword": {
                             "type": "keyword"

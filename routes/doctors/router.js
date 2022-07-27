@@ -28,7 +28,14 @@ function getProfileDetails(req, res) {
     req.body.role == ""
   ) {
     res.status(400).send("bad request , role cannot be empty");
-  } else {
+  }else if (
+    req.body.hasOwnProperty("fields") == false ||
+    req.body.role == null ||
+    req.body.role == ""
+  ) {
+    res.status(400).send("bad request , fields cannot be empty");
+  }
+  else {
     doctorId = req.body.id;
     role = req.body.role;
     fieldsToFetch = req.body.fields;
@@ -147,8 +154,8 @@ function createNewDoctorAccount(req, res) {
   }
 }
 
-router.post("/v1/doctorDetail", getProfileDetails);
-router.post("/v1/doctorDetail/imageUpload", uploadProfileImage);
+router.get("/doctorDetail", getProfileDetails);
+router.post("/doctorDetail/imageUpload", uploadProfileImage);
 router.post("/create", createNewDoctorAccount);
-router.put("/v1/doctorDetail/updateDetails", updateProfileDetails);
+router.put("/doctorDetail/updateDetails", updateProfileDetails);
 module.exports = router;
