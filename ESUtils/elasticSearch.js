@@ -40,7 +40,7 @@ function connectClient() {
   });
 }
 
-//get doctor data with the help of docId
+//get profile details
 function getData(queryBody, paramIndex) {
   //console.log("hello elastic ")
   if (elasticSearchClient == null) {
@@ -76,8 +76,7 @@ function getData(queryBody, paramIndex) {
     });
 }
 
-//update doctor language with the help of docId
-// address,ailmentsTreated,city ,firstName ,lastName, name ,gender, landmark ,locality, phone ,state ,yearsOfExperience
+//update Profile Details
 function updateData(paramIndex, Identifier, body) {
   if (elasticSearchClient == null) {
     connectClient();
@@ -98,18 +97,7 @@ function updateData(paramIndex, Identifier, body) {
   //         reject(err)
   //     })
   // })
-  // let updateRequest = jsonBuilder()
-  //     .startObject()
-  //         .field(fieldName, updateField)
-  //     .endObject()
 
-  //     console.log("updateRequest", updateRequest)
-
-  //     let obj=
-
-  // client.update(updateRequest).get();
-
-  // if(fieldName=='languages'){
   return elasticSearchClient
     .update({
       index: paramIndex,
@@ -120,12 +108,12 @@ function updateData(paramIndex, Identifier, body) {
     })
     .then(function (resp) {
       if (resp.result == "updated") {
-        console.log("language successfully updated");
+        console.log("Fields successfully updated");
         return resp;
       } else {
         return {
           statuscode: 400,
-          message: "please enter a new language to update ",
+          message: "please enter a new Field Value to update ",
         };
       }
     });

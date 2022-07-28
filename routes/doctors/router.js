@@ -1,9 +1,16 @@
 const router = require("express").Router();
 const controller = require("./controller");
-const docPostSchema = require("./docPostSchema");
-var _ = require("underscore");
+const docAttributeList = require("./constants/docAttributeList");
+const _ = require("underscore");
+const cloudinary = require('cloudinary').v2
 
-//get doctor details by his/her id
+cloudinary.config({ 
+  cloud_name: 'sam7566', 
+  api_key: '697775673339567', 
+  api_secret: 'eB8FLNOwCSk98pZs7x2dkIBR324' 
+});
+
+//get Profile details (all & specific Field search)
 function getProfileDetails(req, res) {
   let doctorId;
   let fieldsToFetch;
@@ -21,7 +28,14 @@ function getProfileDetails(req, res) {
     req.body.role == ""
   ) {
     res.status(400).send("bad request , role cannot be empty");
-  } else {
+  }else if (
+    req.body.hasOwnProperty("fields") == false ||
+    req.body.role == null ||
+    req.body.role == ""
+  ) {
+    res.status(400).send("bad request , fields cannot be empty");
+  }
+  else {
     doctorId = req.body.id;
     role = req.body.role;
     fieldsToFetch = req.body.fields;
@@ -32,130 +46,49 @@ function getProfileDetails(req, res) {
     .catch((err) => res.status(err.statuscode).send(err));
 }
 
-//update doctor details
-// languages,email,address,ailmentsTreated,city ,firstName ,lastName, name ,gender, landmark ,locality, phone ,state ,yearsOfExperience
-//notIncluded-->country,designation,education,experience,hospital,isPersonAllowed,isVideoAllowed,licenses,location,schedule,specialization
-function updateDocProfile(req, res) {
-  let queryBody = docPostSchema();
-
-  let doctorId = req.body.id;
-
-  console.log(req.body);
-  let obj = req.body;
-  // console.log(obj);
-  delete  obj["id"];
-  // obj = _.omit(obj, "id");
-  console.log(obj);
-  console.log(req.body);
+//update Profile details
+function updateProfileDetails(req, res) {
+  let id 
+  let role
+  let obj
+  const list = docAttributeList();
+  Object.keys(req.body).forEach(key => {
+    if (!list.includes(key)) { 
+      res.status(400).send("bad request , unknown attribute found in request");
+    }
+  })
+  if (req.body.hasOwnProperty("id") == false || req.body.id == null || req.body.id == "") {
+    res.status(400).send("bad request , id cannot be empty");
+  } else if (req.body.hasOwnProperty("role") == false || req.body.role == null || req.body.role == "") {
+    res.status(400).send("bad request , role cannot be empty");
+  } else { 
+    id = req.body.id;
+    role = req.body.role;
+    obj = req.body;
+    obj = _.omit(obj, "id","role");
+  }
   
-  // if (req.body.hasOwnProperty("id") == false || req.body.id == null ||  req.body.id == "") {
-  //   res.status(400).send("bad request , id cannot be empty");
-  // } else if (req.body.hasOwnProperty("address") == false ||req.body.address == null || req.body.address == "" ) {
-  //   res.status(400).send("bad request , address cannot be empty");
-  // } else if ( req.body.hasOwnProperty("averageRating") == false || req.body.averageRating == null || req.body.averageRating == "" ) {
-  //   res.status(400).send("bad request , averageRating cannot be empty");
-  // } else if ( req.body.hasOwnProperty("ailmentsTreated") == false || req.body.ailmentsTreated == null || req.body.ailmentsTreated == "" ) {
-  //   res.status(400).send("bad request , ailmentsTreated cannot be empty");
-  // }else if ( req.body.hasOwnProperty("city") == false || req.body.city == null || req.body.city == "" ) {
-  //   res.status(400).send("bad request , city cannot be empty");
-  // }else if ( req.body.hasOwnProperty("country") == false || req.body.country == null || req.body.country == "" ) {
-  //   res.status(400).send("bad request , country cannot be empty");
-  // }else if ( req.body.hasOwnProperty("designation") == false || req.body.designation == null || req.body.designation == "" ) {
-  //   res.status(400).send("bad request , designation cannot be empty");
-  // }else if ( req.body.hasOwnProperty("education") == false || req.body.education == null || req.body.education == "" ) {
-  //   res.status(400).send("bad request , education cannot be empty");
-  // }else if ( req.body.hasOwnProperty("designation") == false || req.body.designation == null || req.body.designation == "" ) {
-  //   res.status(400).send("bad request , designation cannot be empty");
-  // }
+
   controller
-    .updateDocLanguage(doctorId, req.body)
+    .updateProfileDetailsController(id, role ,obj)
     .then((data) => res.send(data))
     .catch((err) => res.status(err.statuscode).send(err));
-  // console.log((Object.keys(req.body)[1]));
-  // controller.updateDocLanguage(doctorId,req.body.language)
-  //     .then(data => res.send(data))
-  //     .catch(err => res.status(err.statuscode).send(err))
+  
+}
 
-  // if (req.body.hasOwnProperty("languages")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.languages, "languages")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("email")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.email, "email")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("address")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.address, "address")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("ailmentsTreated")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.ailmentsTreated, "ailmentsTreated")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("city")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.city, "city")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("firstName")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.firstName, "firstName")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("lastName")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.lastName, "lastName")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("name")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.name, "name")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("gender")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.gender, "gender")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("landmark")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.landmark, "landmark")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("locality")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.locality, "locality")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("phone")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.phone, "phone")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("state")) {
-  //   controller
-  //     .updateDocLanguage(doctorId, req.body.state, "state")
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else if (req.body.hasOwnProperty("yearsOfExperience")) {
-  //   controller
-  //     .updateDocLanguage(
-  //       doctorId,
-  //       req.body.yearsOfExperience,
-  //       "yearsOfExperience"
-  //     )
-  //     .then((data) => res.send(data))
-  //     .catch((err) => res.status(err.statuscode).send(err));
-  // } else {
-  //   res.status(400).send({
-  //     statuscode: 400,
-  //     message: "bad request, required field is missing",
-  //   });
-  // }
+//Upload profile Image
+function uploadProfileImage(req, res) { 
+  // console.log(req.body)
+  const file = req.files.profilePic
+  cloudinary.uploader.upload(file.tempFilePath, (err, result) => { 
+    // console.log(result)
+    if (err) { 
+      res.status(500).send("Upload failed !");
+    }
+    req.body.docImageUrl = result.url
+    // console.log(req.body)
+    updateProfileDetails(req, res)
+  })
 }
 
 //Create new Doctor Account
@@ -221,7 +154,8 @@ function createNewDoctorAccount(req, res) {
   }
 }
 
-router.post("/v1/doctorDetail", getProfileDetails);
+router.get("/doctorDetail", getProfileDetails);
+router.post("/doctorDetail/imageUpload", uploadProfileImage);
 router.post("/create", createNewDoctorAccount);
-router.patch("/v1/doctorDetail/updateLanguage", updateDocProfile);
+router.put("/doctorDetail/updateDetails", updateProfileDetails);
 module.exports = router;
