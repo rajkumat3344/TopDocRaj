@@ -1,8 +1,9 @@
 
 
 async function getSearchDetails(body){
-    console.log("Akash bhai")
-    console.log(body)
+    // console.log("Akash bhai")
+    // console.log(body)
+    
     
 }
 

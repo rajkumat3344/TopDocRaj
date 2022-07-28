@@ -89,7 +89,7 @@
         }
       ]
     },
-    "specialization": "Neurosurgeon",
+    "specialization": ["Neurosurgeon","Neurologist"],
     "state": "Odisha",
     "yearsOfExperience": "24"
   },
@@ -110,8 +110,7 @@
         "description": "MCH is short for mean corpuscular hemoglobin",
         "endDate": "1997",
         "fieldOfStudy": "Neuro Surgery",
-        "grade": "A",
-        "school": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "institute": "National Institute of Mental Health and Neurosciences (NIMHANS)",
         "startDate": "1995"
       },
       {
