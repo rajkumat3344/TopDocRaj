@@ -3,6 +3,7 @@ const esdb = require("../../ESUtils/elasticSearch");
 //get doctor data with the help of docId
 async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
   try {
+    console.log("try")
     let queryBody;
     if (fieldsToFetch[0] === "all") {
       queryBody = {
@@ -28,7 +29,7 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
         fields: fieldsToFetch,
       };
     }
-
+    console.log("esdb")
     return esdb.getData(queryBody, role);
   } catch (err) {
     return {

@@ -28,7 +28,21 @@ function getProfileDetails(req, res) {
     req.body.role == ""
   ) {
     res.status(400).send("bad request , role cannot be empty");
-  } else {
+  
+  } else if (
+
+    req.body.hasOwnProperty("fields") == false ||
+
+    req.body.role == null ||
+
+    req.body.role == ""
+
+  ) {
+
+    res.status(400).send("bad request , fields cannot be empty");
+
+  }
+  else {
     doctorId = req.body.id;
     role = req.body.role;
     fieldsToFetch = req.body.fields;

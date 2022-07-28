@@ -1,14 +1,15 @@
 let router = require("express").Router();
+const controller = require("./controller");
 
 function getSearchDetails(req, res) {
-  console.log("chal de bhai");
-  console.log("req. body ", req.body);
-  // pageSize =10;
-  // pageNo=0;
-  // didYouMean= false;
-  // applyLTR=false;
-  // highlight=false;
-  // isStandAlone = false
+  // console.log("chal de bhai");
+  // console.log("req. body ", req.body);
+  pageSize =10;
+  pageNo=0;
+  didYouMean= false;
+  applyLTR=false;
+  highlight=false;
+  isStandAlone = false
   if (
     req.body.hasOwnProperty("query") == false ||
     req.body.query == null ||
@@ -118,7 +119,7 @@ function getSearchDetails(req, res) {
       }
     }
     controller
-      .getSearchDetails(req.body, pageNo, pageSize)
+      .getSearchDetails(req.body)
       .then((data) => res.send(data))
       .catch((err) => res.status(err.statuscode).send(err));
   }
