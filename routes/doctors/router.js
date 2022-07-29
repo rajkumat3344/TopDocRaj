@@ -12,10 +12,25 @@ cloudinary.config({
 
 //get Profile details (all & specific Field search)
 function getProfileDetails(req, res) {
+  //req.header("Access-Control-Allow-Origin","*")
+  // // Website you wish to allow to connect
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+
+  // // Request methods you wish to allow
+  // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+  // // Request headers you wish to allow
+  // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+  // // Set to true if you need the website to include cookies in the requests sent
+  // // to the API (e.g. in case you use sessions)
+  // res.setHeader('Access-Control-Allow-Credentials', true);
+  
+
   let doctorId;
   let fieldsToFetch;
   let role;
-  console.log("hello doctor router id");
+  console.log("hello doctor router id",req.body);
   if (
     req.body.hasOwnProperty("id") == false ||
     req.body.id == null ||
@@ -27,19 +42,21 @@ function getProfileDetails(req, res) {
     req.body.role == null ||
     req.body.role == ""
   ) {
-    res.status(400).send("bad request , role cannot be empty");
+   // res.status(400).send("bad request , role cannot be empty");
   }else if (
     req.body.hasOwnProperty("fields") == false ||
     req.body.role == null ||
     req.body.role == ""
   ) {
-    res.status(400).send("bad request , fields cannot be empty");
+    //res.status(400).send("bad request , fields cannot be empty");
   }
   else {
     doctorId = req.body.id;
     role = req.body.role;
     fieldsToFetch = req.body.fields;
+    console.log("Fields to fetch 1",fieldsToFetch)
   }
+  console.log("Fields to fetch ",fieldsToFetch)
   controller
     .getProfileDetailsController(doctorId, role, fieldsToFetch)
     .then((data) => res.send(data))
@@ -154,7 +171,7 @@ function createNewDoctorAccount(req, res) {
   }
 }
 
-router.get("/doctorDetail", getProfileDetails);
+router.post("/doctorDetail", getProfileDetails);
 router.post("/doctorDetail/imageUpload", uploadProfileImage);
 router.post("/create", createNewDoctorAccount);
 router.put("/doctorDetail/updateDetails", updateProfileDetails);
