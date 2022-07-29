@@ -2,7 +2,7 @@ let router = require("express").Router();
 const controller = require("./controller");
 
 function getSearchDetails(req, res) {
-  // console.log("chal de bhai");
+  console.log("chal de bhai");
   // console.log("req. body ", req.body);
   pageSize =10;
   pageNo=0;
@@ -43,17 +43,7 @@ function getSearchDetails(req, res) {
     } else {
       highlight = Boolean(req.body.highlight);
     }
-    //filter code
-    //         const filters = req.query;
-    //   const filteredUsers = data.filter(user => {
-    //     let isValid = true;
-    //     for (key in filters) {
-    //       console.log(key, user[key], filters[key]);
-    //       isValid = isValid && user[key] == filters[key];
-    //     }
-    //     return isValid;
-    //   });
-    //   res.send(filteredUsers);
+   
 
     //VisibleFilter
     if (req.body.hasOwnProperty("visibleFilters") == false) {
