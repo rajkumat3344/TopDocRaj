@@ -11,7 +11,6 @@ function generateFilterStructure(params, key, value) {
     return params;
 }
 async function getSearchDetails(body){
-    // console.log("Akash bhai")
      console.log(body)
     try{
         let esType = "searchType"
@@ -39,7 +38,7 @@ async function getSearchDetails(body){
             }
         }
 
-    }catch(     err){}
+    }catch(err){}
     
     
 }

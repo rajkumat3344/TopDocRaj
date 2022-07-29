@@ -154,7 +154,7 @@ function createNewDoctorAccount(req, res) {
   }
 }
 
-router.get("/doctorDetail", getProfileDetails);
+router.post("/doctorDetail", getProfileDetails);
 router.post("/doctorDetail/imageUpload", uploadProfileImage);
 router.post("/create", createNewDoctorAccount);
 router.put("/doctorDetail/updateDetails", updateProfileDetails);
