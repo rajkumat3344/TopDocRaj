@@ -3,7 +3,7 @@ const { json } = require('express');
 
 let elasticSearchClient=null
 //Akash Elastic pass
- var auth = 'elastic' + ":" + 'j*+44bej_O0ZsUlUxFH5'
+ var auth = 'elastic' + ":" + 'cmlflG69YzfuZMgN=DUb'
  const connstring = "https://" + 'localhost' + ":" + '9200'
  const enable_password=true;
  function connectClient() {
@@ -158,10 +158,42 @@ function getData(queryBody, paramIndex) {
     //     return   { statuscode: 404, message: "Doctor profile Creation Failed"}
     // });
   }
+
+
+  function templateSearch(queryBody, paramIndex, paramsTemplate) {
+    if (elasticSearchClient == null) {
+        connectClient();
+    }
+    // paramIndexList = paramIndex.split(',')
+    // indexNamesList = []
+    // paramIndexList.forEach(element => {
+    //     indexNamesList.push(indexDict[element])
+    // });
+    // indexNames = indexNamesList.join(',')
+    // console.log(indexNames)
+    return new Promise((resolve, reject) => {
+        elasticSearchClient.searchTemplate({
+            index: paramIndex,
+            // type: indexDict[paramType],
+            body: {
+                "id": paramsTemplate,
+                "params": queryBody
+            }
+        }).then((result) => {
+            // log.info('Results: ' + result);
+            resolve(result)
+        }).catch((err) => {
+            // log.error('error: ' + err);
+            // reject(result)
+            console.log("bata bhai" ,err)
+        })
+    })
+}
   
   module.exports = {
     getData,
     createEntity,
     updateData,
+    templateSearch
   };
   
