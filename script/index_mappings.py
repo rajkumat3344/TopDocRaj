@@ -1,10 +1,10 @@
 doctor_mappings = {
     "mappings": {
         "properties": {
-            "docImageUrl":{
+            "profImageUrl":{
                 "enabled" : false
             },
-            "tags" : {
+            "reviewTags" : {
                 "type": "nested",
                 "properties": {
                     "tagName": {
