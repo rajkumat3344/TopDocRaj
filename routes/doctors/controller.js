@@ -30,8 +30,19 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
       };
     }
     console.log("esdb")
-    return esdb.getData(queryBody, role);
+    let output={}
+    let dataOb=await  esdb.getData(queryBody, role);
+output.results=dataOb.hits[0]._source
+output.hits=dataOb.total.value
+console.log("dataob is ",dataOb.total.value)
+
+
+
+
+
+    return output;
   } catch (err) {
+    console.log("Error is ",err)
     return {
       statuscode: 404,
       message: "There was some error in fetchig the doctors list",
