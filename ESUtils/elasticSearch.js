@@ -3,7 +3,7 @@ const { json } = require('express');
 
 let elasticSearchClient=null
 //Akash Elastic pass
- var auth = 'elastic' + ":" + 'j*+44bej_O0ZsUlUxFH5'
+ var auth = 'elastic' + ":" + 'c_gILCMp_S=_3ZzV30Be'
  const connstring = "https://" + 'localhost' + ":" + '9200'
  const enable_password=true;
  function connectClient() {
@@ -211,6 +211,7 @@ function templateSearch(queryBody, paramIndex, paramsTemplate) {
     //     return   { statuscode: 404, message: "Doctor profile Creation Failed"}
     // });
   }
+
   
   module.exports = {
     getData,
