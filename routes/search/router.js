@@ -1,4 +1,5 @@
 let router = require("express").Router();
+const controller = require("./controller.js");
 
 function getSearchDetails(req, res) {
   console.log("chal de bhai");
@@ -118,7 +119,7 @@ function getSearchDetails(req, res) {
       }
     }
     controller
-      .getSearchDetails(req.body, pageNo, pageSize)
+      .getSearchDetails(req.body)
       .then((data) => res.send(data))
       .catch((err) => res.status(err.statuscode).send(err));
   }

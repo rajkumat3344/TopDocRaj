@@ -155,8 +155,46 @@ function createEntity(object, paramIndex) {
   // });
 }
 
+function templateSearch(queryBody, paramIndex, paramsTemplate) {
+  if (elasticSearchClient == null) {
+      connectClient();
+  }
+  // paramIndexList = paramIndex.split(',')
+  // indexNamesList = []
+  // paramIndexList.forEach(element => {
+  //     indexNamesList.push(indexDict[element])
+  // });
+  // indexNames = indexNamesList.join(',')
+  // console.log(indexNames)
+  return new Promise((resolve, reject) => {
+      elasticSearchClient.searchTemplate({
+          index: paramIndex,
+          // type: indexDict[paramType],
+          body: {
+              "id": paramsTemplate,
+              "params": queryBody
+          }
+      }).then((result) => {
+          // log.info('Results: ' + result);
+          resolve(result)
+        // console.log(result)
+        // return result;
+      }).catch((err) => {
+          // log.error('error: ' + err);
+          reject(result)
+          // console.log(err)
+        // return {
+          
+        //     statuscode: 400,
+        //     message: "please enter a new Field Value to update ",
+        //   };
+      })
+  })
+}
+
 module.exports = {
   getData,
   createEntity,
   updateData,
+  templateSearch
 };
