@@ -84,7 +84,7 @@ function updateProfileDetails(req, res) {
     obj = req.body;
     obj = _.omit(obj, "id","role");
   }
-  
+  console.log("inside update router")
 
   controller
     .updateProfileDetailsController(id, role ,obj)

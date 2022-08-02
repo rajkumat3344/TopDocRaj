@@ -119,8 +119,8 @@ function templateSearch(queryBody, paramIndex, paramsTemplate) {
         // return result;
       }).catch((err) => {
           // log.error('error: ' + err);
-          reject(result)
-          // console.log(err)
+          // reject(result)
+          console.log(err)
         // return {
           
         //     statuscode: 400,

@@ -31,14 +31,13 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
     }
     console.log("esdb")
     let output={}
-    let dataOb=await  esdb.getData(queryBody, role);
-output.results=dataOb.hits[0]._source
-output.hits=dataOb.total.value
-console.log("dataob is ",dataOb.total.value)
-
-
-
-
+    let dataOb = await esdb.getData(queryBody, role);
+    output.hits=dataOb.total.value
+    output.results = dataOb.hits[0]._source
+    output.fields=dataOb.hits[0].fields
+    
+    // console.log("dataob is ", dataOb.total.value)
+    // console.log(output)
 
     return output;
   } catch (err) {
@@ -53,7 +52,14 @@ console.log("dataob is ",dataOb.total.value)
 //update profile data
 async function updateProfileDetailsController(Identifier, role , updateFields) {
   try {
-    return esdb.updateData(role, Identifier, updateFields);
+    let output={}
+    let dataObj = await esdb.updateData(role, Identifier, updateFields);
+    output.results = dataObj.result
+    if (dataObj.hasOwnProperty("result") == true) { 
+      return output
+    }
+    return dataObj
+    
   } catch (err) {
     return {
       statuscode: 404,
