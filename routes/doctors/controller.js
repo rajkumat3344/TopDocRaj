@@ -18,7 +18,7 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
       };
     } else {
       queryBody = {
-        _source: false,
+        _source: fieldsToFetch,
         query: {
           term: {
             _id: {
@@ -26,7 +26,7 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
             },
           },
         },
-        fields: fieldsToFetch,
+        // fields: fieldsToFetch,
       };
     }
     console.log("esdb")
@@ -34,7 +34,7 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
     let dataOb = await esdb.getData(queryBody, role);
     output.hits=dataOb.total.value
     output.results = dataOb.hits[0]._source
-    output.fields=dataOb.hits[0].fields
+    // output.fields=dataOb.hits[0].fields
     
     // console.log("dataob is ", dataOb.total.value)
     // console.log(output)
