@@ -1,10 +1,10 @@
 doctor_mappings = {
     "mappings": {
         "properties": {
-            "docImageUrl":{
+            "profImageUrl":{
                 "enabled" : false
             },
-            "tags" : {
+            "reviewTags" : {
                 "type": "nested",
                 "properties": {
                     "tagName": {
@@ -54,24 +54,16 @@ doctor_mappings = {
                         "type": "keyword"
                     },
                     "schedule": {
+                        "type": "nested",
                 "properties": {
-                    "day": {
+                    "from": {
                         "type": "keyword"
                     },
-                    "slotTimeInMinutes": {
-                        "type": "long"
+                    "to": {
+                        "type": "keyword"
                     },
-                    "workingTime": {
-                        "properties": {
-                            "endTime": {
-                                "type": "date",
-                                "format": "basic_time_no_millis"
-                            },
-                            "startTime": {
-                                "type": "date",
-                                "format": "basic_time_no_millis"
-                            }
-                        }
+                    "duration": {
+                        "type": "keyword"
                     }
                 }
             }
