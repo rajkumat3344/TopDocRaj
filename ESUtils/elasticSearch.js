@@ -3,13 +3,10 @@ const { json } = require('express');
 
 let elasticSearchClient=null
 //Akash Elastic pass
-<<<<<<< HEAD
+
  var auth = 'user' + ":" + 'pass'
  const connstring = "http://" + '43.205.73.23' + ":" + '9200'
-=======
- var auth = 'elastic' + ":" + 'j*+44bej_O0ZsUlUxFH5'
- const connstring = "https://" + 'localhost' + ":" + '9200'
->>>>>>> 0941ae8aede09f8269651339a6fe461cb35cd060
+
  const enable_password=true;
  function connectClient() {
      if (enable_password == true) {
