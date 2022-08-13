@@ -490,6 +490,33 @@ user_mappings = {
             "state" : {
             "type" : "keyword"
             }
+            "medicalDetails" :{
+                "type":"nested",
+                "properties" :{
+                    "sNo":{
+                        "type":"long"
+                    },
+                    "name":{
+                        "type":"keyword"
+                    },
+                    "bmi":{
+                        "type" :"float"
+                    },
+                    "heartRate":{
+                        "type":"float"
+                    },
+                    "fbcStatus":{
+                        "type":"long"
+                    },
+                    "weight":{
+                        "type":"keyword"
+                    },
+                    "orderDate":{
+                    "type" : "date",
+                    "format" : "yyyyMMdd'T'HHmmss.SSSZ"
+                    }
+                }
+            }
         }
     }
 }
