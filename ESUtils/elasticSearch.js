@@ -3,8 +3,13 @@ const { json } = require('express');
 
 let elasticSearchClient=null
 //Akash Elastic pass
+<<<<<<< HEAD
  var auth = 'user' + ":" + 'pass'
  const connstring = "http://" + '43.205.73.23' + ":" + '9200'
+=======
+ var auth = 'elastic' + ":" + 'j*+44bej_O0ZsUlUxFH5'
+ const connstring = "https://" + 'localhost' + ":" + '9200'
+>>>>>>> 0941ae8aede09f8269651339a6fe461cb35cd060
  const enable_password=true;
  function connectClient() {
      if (enable_password == true) {
@@ -78,60 +83,7 @@ function getData(queryBody, paramIndex) {
           return { statuscode: 404, message: "No such doctor exist" };
         else return resp.hits;
       });
- 
-
-  // //console.log("logging data")
-  // return elasticSearchClient.index({
-  //     index: paramIndex,
-  //     document: object
-  // }).then(function(resp) {
-  //     //console.log("here")
-  //   return resp.status(200).json({message:'Doctor profile created successfuly'})
-
-  // }).catch(err=>{
-  //     return   { statuscode: 404, message: "Doctor profile Creation Failed"}
-  // });
-}
-
-function templateSearch(queryBody, paramIndex, paramsTemplate) {
-  if (elasticSearchClient == null) {
-      connectClient();
   }
-  // paramIndexList = paramIndex.split(',')
-  // indexNamesList = []
-  // paramIndexList.forEach(element => {
-  //     indexNamesList.push(indexDict[element])
-  // });
-  // indexNames = indexNamesList.join(',')
-  // console.log(indexNames)
-  return new Promise((resolve, reject) => {
-      elasticSearchClient.searchTemplate({
-          index: paramIndex,
-          // type: indexDict[paramType],
-          body: {
-              "id": paramsTemplate,
-              "params": queryBody
-          }
-      }).then((result) => {
-          // log.info('Results: ' + result);
-          resolve(result)
-        // console.log(result)
-        // return result;
-      }).catch((err) => {
-          // log.error('error: ' + err);
-          // reject(result)
-          console.log(err)
-        // return {
-          
-        //     statuscode: 400,
-        //     message: "please enter a new Field Value to update ",
-        //   };
-      })
-  })
-}
-
-
-  
   
   //update Profile Details
   function updateData(paramIndex, Identifier, body) {
@@ -211,11 +163,10 @@ function templateSearch(queryBody, paramIndex, paramsTemplate) {
     //     return   { statuscode: 404, message: "Doctor profile Creation Failed"}
     // });
   }
-
   
   module.exports = {
     getData,
     createEntity,
     updateData,
-    templateSearch
   };
+  

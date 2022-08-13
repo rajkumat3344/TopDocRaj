@@ -3,7 +3,7 @@ const esdb = require("../../ESUtils/elasticSearch");
 //get doctor data with the help of docId
 async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
   try {
-    console.log("try")
+    console.log("try");
     let queryBody;
     if (fieldsToFetch[0] === "all") {
       queryBody = {
@@ -41,7 +41,7 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
 
     return output;
   } catch (err) {
-    console.log("Error is ",err)
+    console.log("Error is ", err);
     return {
       statuscode: 404,
       message: "There was some error in fetchig the doctors list",
@@ -50,7 +50,7 @@ async function getProfileDetailsController(Identifier, role, fieldsToFetch) {
 }
 
 //update profile data
-async function updateProfileDetailsController(Identifier, role , updateFields) {
+async function updateProfileDetailsController(Identifier, role, updateFields) {
   try {
     let output={}
     let dataObj = await esdb.updateData(role, Identifier, updateFields);
@@ -91,5 +91,5 @@ async function createNewDoctorAccount(object) {
 module.exports = {
   getProfileDetailsController,
   createNewDoctorAccount,
- updateProfileDetailsController,
+  updateProfileDetailsController,
 };
