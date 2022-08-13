@@ -3,17 +3,17 @@ const { json } = require('express');
 
 let elasticSearchClient=null
 //Akash Elastic pass
- var auth = 'elastic' + ":" + 'c_gILCMp_S=_3ZzV30Be'
- const connstring = "https://" + 'localhost' + ":" + '9200'
+ var auth = 'user' + ":" + 'pass'
+ const connstring = "http://" + '43.205.73.23' + ":" + '9200'
  const enable_password=true;
  function connectClient() {
      if (enable_password == true) {
         console.log('inside iffffffffffff');
          elasticSearchClient = new elasticsearch.Client({
              host: [{
-                 host: 'localhost',
+                 host: '43.205.73.23',
                  port: '9200',
-                 protocol: "https",
+                 protocol: "http",
                  auth: auth,
                  log: 'trace',
                  requestTimeout: 60000
